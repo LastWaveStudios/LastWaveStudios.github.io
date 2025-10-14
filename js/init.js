@@ -28,6 +28,14 @@ var windowsHeight = $(window).height();
       , "images/bg3.jpg"*/
     ]/*, {duration: 3000, fade: 750}*/);
 
+  $('#headerwrap2').css('height', windowsHeight + 'px');
+
+  $('#headerwrap2').backstretch([
+        "images/bg1.jpg"/*
+      , "images/bg2.jpg"
+      , "images/bg3.jpg"*/
+    ]/*, {duration: 3000, fade: 750}*/);
+
 jQuery(document).ready(function(){
 
   jQuery('.service-icon-wrapper, .fade-up, .fade-down, .team-image-wrapper').addClass('no-display');
