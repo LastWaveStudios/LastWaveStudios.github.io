@@ -737,6 +737,12 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+.center{
+  display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    text-align: center;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;

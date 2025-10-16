@@ -30,12 +30,57 @@ var windowsHeight = $(window).height();
 
   $('#headerwrap2').css('height', windowsHeight + 'px');
 
-  $('#headerwrap2').backstretch([
-        "images/bg1.jpg"/*
+  $('#headerwrap2').backstretch(["images/bg1.jpg"]);
+  var indiceActual =0;
+  var textos = [
+    "The music box"/*,
+    "Background 2",
+    "Background 3"*/
+  ];
+  var first=true;
+  var ButtonPressed = false;
+  $('#Backgrounds').css('height', windowsHeight + 'px');
+
+  $('#Backgrounds').backstretch([
+      "images/bg1.gif"/*
       , "images/bg2.jpg"
       , "images/bg3.jpg"*/
-    ]/*, {duration: 3000, fade: 750}*/);
+    ]);
 
+  function actualizarTexto() {
+  // para hacer transición suave (opcional)
+  $('#banner-text').fadeOut(300, function() {
+    $(this).text(textos[indiceActual]).fadeIn(300);
+  });
+}
+
+$('#banner-text').text(textos[indiceActual]); // texto inicial
+/*
+$('#prev').on('click', function () {
+  $('#Backgrounds').backstretch("prev");
+  indiceActual = (indiceActual - 1 + textos.length) % textos.length; // retrocede
+  ButtonPressed=true;
+});
+
+$('#next').on('click', function () {
+  $('#Backgrounds').backstretch("next");
+  indiceActual = (indiceActual + 1) % textos.length; // avanza
+  ButtonPressed=true;
+});
+*/
+$('#Backgrounds').on('backstretch.after', function (e, instance, index) {
+  if(first){
+    first=false
+    return;
+  }
+  if(!ButtonPressed){
+    indiceActual = (indiceActual + 1) % textos.length; // avanza
+  }else{
+    ButtonPressed=false;
+  }
+  actualizarTexto();
+
+});
 jQuery(document).ready(function(){
 
   jQuery('.service-icon-wrapper, .fade-up, .fade-down, .team-image-wrapper').addClass('no-display');
