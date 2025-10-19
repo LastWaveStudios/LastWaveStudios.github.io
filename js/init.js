@@ -22,6 +22,15 @@ jQuery('.navbar-default').addClass('opaqued');
 function Back() {
   window.history.back();
 }
+let cmAngle = 0;
+const cmMembers = 6;
+const cmCarousel = document.getElementById('cm-carousel');
+
+function rotateCMCarousel(direction) {
+  const step = 360 / cmMembers;
+  cmAngle += step * direction * -1;
+  cmCarousel.style.transform = `rotateY(${cmAngle}deg)`;
+}
 
 var windowsHeight = $(window).height();
 $('#headerwrap').css('height', windowsHeight + 'px');
