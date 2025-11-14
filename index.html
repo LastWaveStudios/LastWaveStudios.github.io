@@ -152,29 +152,27 @@
 
 	<div class="equipo-container">
 		<div class="circle-wrapper">
-			<!-- PRIMERO el círculo con los miembros -->
 			<div class="circle" id="circle">
-				<div class="member-container"> <!-- Arturo - Derecha (0°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="Arturo Carretero Aguado" data-member="arturo">
 				</div>
-				<div class="member-container"> <!-- Ángela - Abajo-derecha (60°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="Ángela Fernández Hernández" data-member="angela">
 				</div>
-				<div class="member-container"> <!-- Claudia - Abajo-izquierda (120°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="Claudia Alejandra Fernández Torrejón" data-member="claudia">
 				</div>
-				<div class="member-container"> <!-- Iván - Izquierda (180°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="Iván García García" data-member="ivan">
 				</div>
-				<div class="member-container"> <!-- George - Arriba-izquierda (240°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="George Picu Hordoan" data-member="george">
 				</div>
-				<div class="member-container"> <!-- Unai - Arriba-derecha (300°) -->
+				<div class="member-container"> 
 					<img src="images/logo.png" alt="Unai Retes Corada" data-member="unai">
 				</div>
 			</div>
 
-			<!-- DESPUÉS el engranaje (así estará detrás) -->
 			<div class="engranaje-central">
 				<img src="images/engranaje.png" alt="Engranaje" class="engranaje-img">
 			</div>
@@ -241,9 +239,8 @@
 				{ name: "Unai Retes Corada", desc: "Desarrollador de interfaces y UX." }
 			];
 
-			// Estado inicial - PRUEBA DIFERENTES OFFSETS
 			const initialRotation = -300;
-			const engranajeOffset = 45; // ← EMPIEZA con 0 y luego ajusta
+			const engranajeOffset = 45; 
 
 			infoPanel.innerHTML = `
     <h2>Selecciona un miembro</h2>
@@ -253,7 +250,6 @@
 			circle.style.transform = `rotate(${initialRotation}deg)`;
 			if (engranaje) engranaje.style.transform = `translate(-50%, -50%) rotate(${initialRotation + engranajeOffset}deg)`;
 
-			// Rotación inversa inicial
 			memberContainers.forEach((container) => {
 				const img = container.querySelector("img");
 				img.style.transform = `rotate(${-initialRotation}deg)`;
@@ -265,17 +261,14 @@
 				img.addEventListener("click", () => {
 					const targetRotation = -index * 60;
 
-					// Rotar el círculo completo Y el engranaje (con offset)
 					circle.style.transform = `rotate(${targetRotation}deg)`;
 					if (engranaje) engranaje.style.transform = `translate(-50%, -50%) rotate(${targetRotation + engranajeOffset}deg)`;
 
-					// Rotación inversa para todas las imágenes
 					memberContainers.forEach((container) => {
 						const img = container.querySelector("img");
 						img.style.transform = `rotate(${-targetRotation}deg)`;
 					});
 
-					// Mostrar información del miembro
 					infoPanel.innerHTML = `
         <h2>${members[index].name}</h2>
         <p>${members[index].desc}</p>
