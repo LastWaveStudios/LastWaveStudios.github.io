@@ -730,106 +730,109 @@ a:after {
    ========================================================================== */
 
 .carrusel-miembros {
-  display: flex;
-  justify-content: center;
-  margin: 60px 0;
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
 }
 
 .cm-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 260px;
-  perspective: 1200px;
-  overflow: visible;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 260px;
+    perspective: 1200px;
+    overflow: visible;
 }
 
 .cm-carousel {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 1s ease;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
 }
 
 .cm-member {
-  position: absolute;
-  width: 90%; 
-  max-width: 550px;
-  height: 220px;
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  transform: rotateY(calc(var(--i) * 60deg)) translateZ(480px); 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-direction: row;
+    position: absolute;
+    width: 90%;
+    max-width: 550px;
+    height: 220px;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    transform: rotateY(calc(var(--i) * 60deg)) translateZ(480px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
 }
 
 .cm-member img {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
+
 .team-social svg,
 .team-social i {
-  width: 16px;
-  height: 16px;
+    width: 16px;
+    height: 16px;
 }
+
 .cm-info {
-  text-align: center;
+    text-align: center;
 }
+
 .cm-info h2 {
-  margin: 0 0 10px;
-  font-size: 1.3rem;
+    margin: 0 0 10px;
+    font-size: 1.3rem;
 }
 
 
 .cm-info p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #444;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #444;
 }
 
 .image-and-icons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .cm-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.6rem;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: background 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
 }
 
 
 .cm-arrow:hover {
-  background: #eee;
+    background: #eee;
 }
 
 .cm-left {
-  left: -350px;
+    left: -350px;
 }
 
 .cm-right {
-  right: -350px;
+    right: -350px;
 }
 
 
@@ -880,11 +883,13 @@ a:after {
 .team-info p {
     padding: 0;
 }
+
 .team-social-wrapper {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
 }
+
 .team-social {
     background: #2b2b2b;
     padding: 6px;
@@ -2517,55 +2522,113 @@ screen and (max-height: 300px) {
 }
 
 
-/* Carrusel de miembros*/
+
+.engranaje-central {
+    position: absolute;
+    width: 375px;
+    height: 375px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: transform 1s ease-in-out;
+    pointer-events: none;
+
+}
+
+.engranaje-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0.8) contrast(1.2);
+    pointer-events: none;
+
+}
+
+
 .equipo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 80px auto;
+    flex-wrap: wrap;
 }
 
 .circle-wrapper {
-  position: relative;
-  width: 300px;
-  height: 300px;
+    position: relative;
+    width: 300px;
+    height: 300px;
 }
 
 .circle {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  transform: rotate(0deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-300deg);
+    transition: transform 1s ease-in-out;
+    z-index: 2;
 }
 
-.circle img {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+.circle .member-container {
+    z-index: 3;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
 }
 
-.circle img:nth-child(1) { transform: rotate(0deg) translate(130px) rotate(0deg); }
-.circle img:nth-child(2) { transform: rotate(60deg) translate(130px) rotate(-60deg); }
-.circle img:nth-child(3) { transform: rotate(120deg) translate(130px) rotate(-120deg); }
-.circle img:nth-child(4) { transform: rotate(180deg) translate(130px) rotate(-180deg); }
-.circle img:nth-child(5) { transform: rotate(240deg) translate(130px) rotate(-240deg); }
-.circle img:nth-child(6) { transform: rotate(300deg) translate(130px) rotate(-300deg); }
 
-.circle img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #00ffcc;
+.circle .member-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    object-fit: cover;
+    display: block;
+    transform-origin: center;
+    z-index: 4;
+}
+
+.circle .member-container:nth-child(1) {
+    transform: translate(140px, 0);
+}
+
+.circle .member-container:nth-child(2) {
+    transform: translate(70px, 121px);
+}
+
+.circle .member-container:nth-child(3) {
+    transform: translate(-70px, 121px);
+}
+
+.circle .member-container:nth-child(4) {
+    transform: translate(-140px, 0);
+}
+
+.circle .member-container:nth-child(5) {
+    transform: translate(-70px, -121px);
+}
+
+.circle .member-container:nth-child(6) {
+    transform: translate(70px, -121px);
+}
+
+.circle .member-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 .info-panel {
-  width: 350px;
-  background: #f5f5f5;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    max-width: 300px;
+    min-height: 150px;
+    text-align: left;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
