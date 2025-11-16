@@ -4,8 +4,6 @@
 	templatestock.co @templatestock
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-
-
 <html lang="en">
 
 <head>
@@ -37,43 +35,61 @@
 
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
-	<button class="btn-Back" onclick="Back()">Go Back to Previous Page</button>
+	<!-- ==== NAVBAR ==== -->
+	<nav class="navbar navbar-fixed-top" style="background: rgba(255, 255, 255, 0.95); padding: 12px 0;">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#headerwrap2"
+					style="display: flex; align-items: center; margin-top: 25px;">
+					<img src="images/logo.png" alt="Last Wave Studios Logo" style="height: 70px; margin-right: 15px;">
+					<span style="font-size: 30px; font-weight: bold; color: #3498db;">Last Wave Studios</span>
+				</a>
+			</div>
+			<div class="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#story">Story</a></li>
+					<li><a href="#enemies">Enemies</a></li>
+					<li><a href="#mechanics">Mechanics</a></li>
+					<li><a href="#towers">Towers</a></li>
+					<li><a href="#play">Play</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
+	<button class="btn-Back" onclick="window.location.href='index.html'">Back to Home</button>
 
-
-	<!-- ==== HEADERWRAP ==== -->
+	<!-- ==== HERO SECTION ==== -->
 	<div id="headerwrap2">
 		<header class="clearfix">
 			<h1 class="animated bounceIn">Rhythm Citadel</h1>
 			<a href="GDD-Grupo5.pdf" download="GDD-RhythmCitadel.pdf" class="btn homebtn smoothScroll">Learn More <i
 					class="el-icon-chevron-down homeicon"></i></a>
 		</header>
-	</div><!-- /headerwrap -->
+	</div>
 
-	<div class="container" id="about" name="about">
+	<!-- ==== STORY SECTION ==== -->
+	<div class="container" id="story">
 		<div class="row white">
-			<h1 class="fade-down centered">The game's story</h1>
+			<h1 class="fade-down centered">The Game's Story</h1>
 			<hr>
-
 			<div class="fade-up col-md-12">
 				<p>
 					Inside a music box lives a ballerina, who, by spinning, keeps the music alive. However, an army of
 					mechanical musical notes threatens to end her. These notes, which once danced to the same rhythm as
 					the ballerina and were her faithful defenders, have been corrupted by greed and fatigue from always
 					having to stay in tune with her. Now they march in rebellion to annihilate her.
-					<br>
-					<br>
+					<br><br>
 					But the ballerina is not alone. A group of instruments rises to her defense, ready to do whatever it
 					takes to allow their beloved ballerina to keep bringing the music box to life. They are prepared to
 					take down any notes necessary to achieve this.
 				</p>
-			</div><!-- col-md-6 -->
-		</div><!-- row -->
-	</div><!-- container -->
+			</div>
+		</div>
+	</div>
 
-
-	<!-- ==== SECTION DIVIDER2 -->
-	<section class="section-divider textdivider divider2">
+	<!-- ==== STATS SECTION ==== -->
+	<section class="stats-divider">
 		<div class="container center">
 			<div class="col-md-3">
 				<span class="counter">5</span>
@@ -91,135 +107,122 @@
 				<span class="counter">3</span>
 				<span class="counter-desc">Levels</span>
 			</div>
-		</div><!-- container -->
-	</section><!-- section -->
+		</div>
+	</section>
 
+	<!-- ==== ENEMIES SECTION ==== -->
+	<div class="container" id="enemies">
+		<div class="row white">
+			<h1 class="fade-down centered">Meet Our Mechanic Notes</h1>
+			<hr>
 
-
-
-	<!-- ==== Mechanic notes ==== -->
-	<div class="container section">
-		<br>
-		<div class="row white centered">
-			<h1 class="fade-down centered">MEET OUR MECHANIC NOTES</h1>
-			<hr class="fade-down title-mb">
-
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/negra.png" alt="">
+			<div class="enemy-section">
+				<div class="enemy-content">
+					<div class="enemy-image">
+						<img src="images/negra.png" alt="Quarter Note" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="enemy-text">
 						<h4>Quarter</h4>
 						<p>Watch out for this rail-riding ground enemy. It may not be the fastest, but it steadily
-							advances,
-							smashing into your towers and the ballerina with brute force.</p>
+							advances, smashing into your towers and the ballerina with brute force.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/blanca.png" alt="">
+
+			<div class="enemy-section">
+				<div class="enemy-content reverse">
+					<div class="enemy-image">
+						<img src="images/blanca.png" alt="Half Note" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="enemy-text">
 						<h4>Half</h4>
-						<p>This ground enemy moves a bit slower than the crotchet, but don’t let its pace fool you — it
+						<p>This ground enemy moves a bit slower than the crotchet, but don't let its pace fool you — it
 							packs a heavier punch. If it reaches your defenses, it will deal greater damage than you'd
 							expect.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/silencio.png" alt="">
+			<div class="enemy-section">
+				<div class="enemy-content">
+					<div class="enemy-image">
+						<img src="images/silencio.png" alt="Quarter Rest" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
-						<h4>Quarter rest</h4>
-						<p>The only flying enemy in the game, this one glides along ceiling rails at a speed similar to
-							the
-							Shadows. It’s not very durable and deals less damage than others, but unlike the rest, it
-							attacks from a distance — launching pieces at your towers and the ballerina.</p>
+					<div class="enemy-text">
+						<h4>Quarter Rest</h4>
+						<p>The only flying enemy in the game, this one glides along ceiling rails. It's not very durable
+							and deals less damage than others, but attacks from a distance.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- ==== Special Enemies ==== -->
-	<div class="container section">
-		<div class="row white centered">
+	<!-- ==== SPECIAL ENEMIES ==== -->
+	<div class="container">
+		<div class="row white">
 			<h1 class="fade-down centered">Special Enemies</h1>
-			<hr class="fade-down title-mb">
-			<div class="col-md-4  col-md-offset-2">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/redonda.png" alt="">
+			<hr>
+
+			<div class="enemy-section">
+				<div class="enemy-content reverse">
+					<div class="enemy-image">
+						<img src="images/redonda.png" alt="Whole Note" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="enemy-text">
 						<h4>Whole</h4>
-						<p>Moves slowly along the rails, but don’t let its pace fool you — its blows pack a serious
-							punch.
-							It slams your towers and the ballerina hard, and it’s tougher to take down than most enemies
-							out
-							there.</p>
+						<p>Moves slowly along the rails, but its blows pack a serious punch. It's tougher to take down
+							than most enemies out there.</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/corchea.png" alt="">
+			<div class="enemy-section">
+				<div class="enemy-content">
+					<div class="enemy-image">
+						<img src="images/corchea.png" alt="Eighth Note" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="enemy-text">
 						<h4>Eighth</h4>
-						<p>Is lightning fast, striking twice in a flash. Each hit may seem weak, but don’t underestimate
-							it
-							— you need to destroy both notes to defeat it. Take down one, and the other will rage,
-							speeding
-							up and hitting even harder.</p>
+						<p>Lightning fast, striking twice in a flash. You need to destroy both notes to defeat it.
+							Take down one, and the other will rage, speeding up and hitting even harder.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- ==== Bosses ==== -->
-	<div class="container section">
-		<div class="row white centered">
-			<h1 class="fade-down centered">Final Bosses</h1>
-			<hr class="fade-down title-mb">
-			<div style="display: inline-block; float: none;" class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/sol.png" alt="">
+	<!-- ==== BOSSES SECTION ==== -->
+	<div class="container">
+		<div class="row white">
+			<h1 class="fade-down centered">Final Boss</h1>
+			<hr>
+
+			<div class="enemy-section">
+				<div class="enemy-content reverse">
+					<div class="enemy-image">
+						<img src="images/sol.png" alt="G Musical Note" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
-						<h4>G - musical note</h4>
-						<p>
-							This boss moves slowly along the tracks. It is usually accompanied by several enemies, which
-							it infects in order to steal their life and heal itself. This enemy will attack by throwing
-							acid droplets at the ballerina to defeat her. If it reaches her, it will take her down with
-							a single hit.
-						</p>
+					<div class="enemy-text">
+						<h4>G - Musical Note</h4>
+						<p>This boss moves slowly along the tracks, usually accompanied by several enemies which it
+							infects to steal their life and heal itself. It attacks by throwing acid droplets at the
+							ballerina. If it reaches her, it will take her down with a single hit.</p>
 					</div>
 				</div>
 			</div>
-		</div><!-- row -->
-	</div><!-- container -->
+		</div>
+	</div>
 
-	<!-- ==== SECTION DIVIDER3 -->
-	<section class="section-divider textdivider divider3">
+	<!-- ==== MECHANICS SECTION ==== -->
+	<section class="clean-section-divider" id="mechanics">
 		<div class="container">
 			<h1 class="fade-down">Game Mechanics</h1>
-		</div><!-- container -->
-	</section><!-- section -->
-	<!--  SERVICES -->
-	<div class="greywrap">
+			<p class="fade-up">Discover the unique rhythm-based tower defense gameplay</p>
+		</div>
+	</section>
 
+	<div class="greywrap">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
@@ -229,10 +232,8 @@
 					<div class="col-md-9 fade-up service-info">
 						<h2>Phases</h2>
 						<ul>
-							<li><strong>Preparation Phase:</strong> Place turrets in designated spots and assign their
-								inputs.</li>
-							<li><strong>Combat Phase:</strong> The enemy horde begins, and turrets must be activated
-								according to the rhythm.</li>
+							<li><strong>Preparation Phase:</strong> Place turrets and assign their inputs.</li>
+							<li><strong>Combat Phase:</strong> Enemy horde begins, turrets activate with rhythm.</li>
 						</ul>
 					</div>
 				</div>
@@ -243,9 +244,8 @@
 					</div>
 					<div class="col-md-9 fade-up service-info">
 						<h2>Turret Activation</h2>
-						<p>Each turret follows the rhythm defined by its rhythmic pattern. This pattern changes with
-							upgrades, modifying its behavior, such as altering its area of effect, range, damage, and/or
-							attack frequency.</p>
+						<p>Each turret follows its rhythmic pattern. Upgrades modify area of effect, range, damage,
+							and attack frequency.</p>
 					</div>
 				</div>
 
@@ -254,12 +254,9 @@
 						<i class="icon el-icon-user"></i>
 					</div>
 					<div class="col-md-9 fade-up service-info">
-						<div class="fade-up">
-							<h2>Rhythmic Patterns</h2>
-							<p>Each turret has a fixed pattern based on its type and upgrades, lasting one measure,
-								matching the background song’s beat. This ensures uniformity among turrets and allows
-								for difficulty adjustments with regular rhythms or syncopations.</p>
-						</div>
+						<h2>Rhythmic Patterns</h2>
+						<p>Each turret has a fixed pattern matching the background song's beat, allowing for difficulty
+							adjustments with regular rhythms or syncopations.</p>
 					</div>
 				</div>
 
@@ -269,13 +266,10 @@
 					</div>
 					<div class="col-md-9 fade-up service-info">
 						<h2>Difficulties</h2>
-						<p>The game features 3 difficulty modes: “Piano,” “Mezzo-Forte,” and “Arpegio.” As difficulty
-							increases, enemy stats multiply, increasing health, resistance, and damage depending on the
-							enemy type:</p>
 						<ul>
-							<li><strong>Piano Mode:</strong> Base </li>
+							<li><strong>Piano Mode:</strong> Base stats</li>
 							<li><strong>Mezzo-Forte Mode:</strong> 1.25x multiplier</li>
-							<li><strong>Arpegio Mode:</strong> 1.5x multiplier </li>
+							<li><strong>Arpegio Mode:</strong> 1.5x multiplier</li>
 							<li><strong>Virtuoso Mode:</strong> 2x multiplier</li>
 						</ul>
 					</div>
@@ -287,7 +281,7 @@
 					</div>
 					<div class="col-md-9 fade-up service-info">
 						<h2>Tactical Defenses</h2>
-						<p>In addition to turrets and enemies, there are barriers, pushes, and slowdowns.</p>
+						<p>In addition to turrets, use barriers, pushes, and slowdowns for strategic advantage.</p>
 					</div>
 				</div>
 
@@ -296,215 +290,130 @@
 						<i class="icon el-icon-user"></i>
 					</div>
 					<div class="col-md-9 fade-up service-info">
-						<div class="fade-up">
-							<h2>Economy</h2>
-							<p>The in-game currency is Vinyls. Players start with a set amount of Vinyls to place their
-								initial turrets and can earn more by defeating enemies to build or upgrade turrets. This
-								creates a constant resource flow, encouraging efficient enemy elimination and optimal
-								defense placement.
-							</p>
-						</div>
+						<h2>Economy</h2>
+						<p>Use Vinyls currency to place and upgrade turrets. Earn more by defeating enemies for
+							optimal defense placement.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- ==== SECTION DIVIDER6 ==== -->
-	<section class="section-divider textdivider divider3">
+	<!-- ==== TOWERS SECTION ==== -->
+	<section class="clean-section-divider" id="towers">
 		<div class="container">
 			<h1 class="fade-down">Towers</h1>
-			<div class="fade-up">
-			</div>
-		</div><!-- container -->
-	</section><!-- section -->
+			<p class="fade-up">Musical instruments that don't just play — they fight</p>
+		</div>
+	</section>
+
 	<div class="container">
 		<div class="row white">
-			<hr class="fade-down title-mb">
-			<p class="fade-up" style="text-align: center;">
-				Here, instruments don’t just play — they fight.
-				Each tower is a musical instrument with its own attack style, rhythm, and personality.
-				Place them wisely, build harmonic combos, and protect the ballerina from the enemy’s relentless march.
-				<br>
-				From the heavy beats of percussion to the quick notes of wind instruments, each one plays a crucial role
-				in this symphony of survival.
-			</p>
-		</div><!-- row -->
-	</div><!-- container -->
-
-
-
-	<div class="container section">
-		<br>
-		<div class="row white centered">
-			<hr class="fade-down title-mb">
-			<div class="col-md-4  col-md-offset-2">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/trompetas.png" alt="">
+			<div class="tower-section">
+				<div class="tower-content">
+					<div class="tower-image">
+						<img src="images/trompetas.png" alt="Trumpets" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="tower-text">
 						<h4>Trumpets</h4>
-						<p>Watch out for this rail-riding ground enemy. It may not be the fastest, but it steadily
-							advances,
-							smashing into your towers and the ballerina with brute force.</p>
+						<p>Powerful wind instruments that deliver strong, focused attacks against ground enemies.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/piano.png" alt="">
+
+			<div class="tower-section">
+				<div class="tower-content reverse">
+					<div class="tower-image">
+						<img src="images/piano.png" alt="Pianos" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="tower-text">
 						<h4>Pianos</h4>
-						<p>This ground enemy moves a bit slower than the crotchet, but don’t let its pace fool you — it
-							packs a heavier punch. If it reaches your defenses, it will deal greater damage than you'd
-							expect.</p>
+						<p>Versatile instruments with area-of-effect attacks that can hit multiple enemies at once.</p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<br>
-		</div>
-		<div class="row white centered">
-			<div class="col-md-4 col-md-offset-2">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/violin.png" alt="">
+
+			<div class="tower-section">
+				<div class="tower-content">
+					<div class="tower-image">
+						<img src="images/violin.png" alt="Violins" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="tower-text">
 						<h4>Violins</h4>
-						<p>The only flying enemy in the game, this one glides along ceiling rails at a speed similar to
-							the
-							Shadows. It’s not very durable and deals less damage than others, but unlike the rest, it
-							attacks from a distance — launching pieces at your towers and the ballerina.</p>
+						<p>Precision instruments that deliver rapid, targeted attacks with high accuracy.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3 fade-down team-image-wrapper">
-						<img class="img team-image" src="images/tambor.png" alt="">
+
+			<div class="tower-section">
+				<div class="tower-content reverse">
+					<div class="tower-image">
+						<img src="images/tambor.png" alt="Drums" class="img-responsive">
 					</div>
-					<div class="col-md-9 col-sm-9 col-xs-9 fade-up team-info">
+					<div class="tower-text">
 						<h4>Drums</h4>
-						<p>The only flying enemy in the game, this one glides along ceiling rails at a speed similar to
-							the
-							Shadows. It’s not very durable and deals less damage than others, but unlike the rest, it
-							attacks from a distance — launching pieces at your towers and the ballerina.</p>
+						<p>Percussion instruments that provide crowd control with stunning and slowing effects.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- ==== SECTION DIVIDER6 ==== -->
-	<section class="section-divider textdivider divider3">
+	<!-- ==== PLAY SECTION ==== -->
+	<section class="clean-section-divider accent" id="play">
 		<div class="container">
-			<h1 class="fade-down">Background</h1>
-			<div class="fade-up">
+			<h1 class="fade-down">Available on itch.io</h1>
+			<p class="fade-up">Play the demo now and experience the rhythm</p>
+			<div class="fade-up" style="margin-top: 30px;">
+				<a href="https://thelastwavestudios.itch.io/rhythm-citadel" class="btn homebtn smoothScroll"
+					style="background: white; color: #000000; padding: 12px 30px; font-weight: bold;">PLAY NOW!
+					<i class="el-icon-chevron-down homeicon"></i></a>
 			</div>
-		</div><!-- container -->
-	</section><!-- section -->
-	<div class="container">
-		<div class="row white" style="text-align: center;">
-			<hr class="fade-down title-mb">
-			<p>
-				You’ll find yourself inside an old music box, a place where the melody never stops and every corner
-				pulses to the rhythm of its inner mechanism. In this enclosed, enchanted space, you’ll face various
-				threats to protect what keeps the harmony of this world alive. Though it may seem fragile and delicate,
-				its interior hides a constant tension between beauty and danger.
-			</p>
-		</div><!-- col-md-6 -->
-	</div><!-- row -->
-	</div><!-- container -->
-	<!-- ==== HEADERWRAP ==== -->
-	<div id="Backgrounds">
+		</div>
+	</section>
 
-		<!-- Flechas 
-			<button id="prev" class="arrow">⟸</button>
-			<button id="next" class="arrow">⟹</button>-->
-		<header class="clearfix">
-			<h1 id="banner-text">The music box</h1>
-		</header>
-	</div><!-- /headerwrap -->
-
-
-	<!-- ==== PORTFOLIO ==== -->
-	<div class="row white">
-		<h1 class="fade-down centered">Game under construction</h1>
-		<hr class="fade-down title-mb">
-
-	</div>
-	<div class="container">
-		<div class="row white">
-			<p class="fade-up" style="text-align: center;">
-				We are an indie game studio in growth, currently working on Rhythm Citadel, a project that aims to merge
-				two genres: Tower Defense and Rhythm. Although we are still in the early stages of development, we are
-				committed to delivering a unique experience that will captivate players with its rhythm and visual
-				style. Join us on this exciting journey as we bring our vision to life!
-			</p>
-		</div><!-- row -->
-	</div><!-- container -->
-
-	<!--
-	<div style="text-align: center;">
-		<h2 class="fade-down centered"> Gameplay</h2>
-		<iframe width="560" height="315"
-			src="https://www.youtube.com/embed/watch?v=cQKGUgOfD8U&list=RDFC38TaD9QDI&index=17" frameborder="0"
-			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	</div -->
-
-	<!-- ==== SECTION DIVIDER6 ==== -->
-	<section class="section-divider textdivider divider2">
-		<div class="container">
-			<h1 class="fade-down">Available on itchio</h1>
-			<hr>
-			<div class="fade-up">
-				<a href="https://thelastwavestudios.itch.io/rhythm-citadel" class="btn homebtn smoothScroll">PLAY NOW! <i class="el-icon-chevron-down homeicon"></i></a>
-			</div>
-		</div><!-- container -->
-	</section><!-- section -->
-
-
-	</div>
-
+	<!-- ==== FOOTER ==== -->
 	<div id="footerwrap">
 		<div class="container">
 			<a href="#" class="icon el-icon-chevron-up"><i class="fa fa-angle-double-up"></i></a>
-
 			<h1 class="centered fade-down" style="color: aliceblue;">THANKS FOR VISITING US</h1>
 			<ul id="footer-social" class="fade-down" style="color: aliceblue;">
-				<span class="icon el-icon-home"></span> Madrid,Spain<br />
+				<span class="icon el-icon-home"></span> Madrid, Spain<br />
 				<span class="icon el-icon-user"></span><strong> Gmail:</strong> lastwavestudios@gmail.com<br />
-				<span class="icon el-icon-link"></span><a href="https://linktr.ee/LastWaveStudios"><strong> LinkTree:</strong> LastWaveStudios</a><br />
-				<span class="icon el-icon-twitter"></span> <a href="https://x.com/LastWaveStudios"><strong> Twitter:</strong> @LastWaveStudios</a> <br />
+				<span class="icon el-icon-link"></span><a href="https://linktr.ee/LastWaveStudios"><strong>
+						LinkTree:</strong> LastWaveStudios</a><br />
+				<span class="icon el-icon-twitter"></span> <a href="https://x.com/LastWaveStudios"><strong>
+						Twitter:</strong> @LastWaveStudios</a><br />
 				<span class="icon el-icon-youtube"></span> <a href="https://www.youtube.com/@LastWaveStudios6"><strong>
-						Youtube: </strong> @LastWaveStudios6</a> <br />
-				<span class="icon el-icon-rss"></span><a href="https://github.com/LastWaveStudios"><strong> Github:
-					</strong> LastWaveStudios</a> <br />
+						YouTube:</strong> @LastWaveStudios6</a><br />
+				<span class="icon el-icon-rss"></span><a href="https://github.com/LastWaveStudios"><strong>
+						GitHub:</strong> LastWaveStudios</a><br />
 				<span class="icon el-icon-star"></span><a href="https://itch.io/profile/thelastwavestudios"><strong>
-						Itchio.io:</strong> TheLastWaveStudios</a>
-
+						Itch.io:</strong> TheLastWaveStudios</a>
 			</ul>
-
-			<div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5"
-				style="border-color: rgba(256, 256, 256, .1) !important; color: aliceblue;">
-				<h4 class="fade-up">Created by <a href="http://templatestock.co">Template Stock</a> - Copyright 2016
-				</h4>
-				<p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Domain</a>. All Rights
-					Reserved.</a></p>
-				<p class="m-0 text-white">Designed by <a class="font-weight-bold" href="https://htmlcodex.com">HTML
-						Codex</a></p>
-			</div>
 		</div>
 	</div>
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+	<script>
+		// Controlar la visibilidad del navbar al hacer scroll
+		let lastScrollTop = 0;
+		const navbar = document.querySelector('.navbar');
+
+		window.addEventListener('scroll', function () {
+			let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (scrollTop > lastScrollTop) {
+				navbar.style.transform = 'translateY(-100%)';
+			} else {
+				navbar.style.transform = 'translateY(0)';
+			}
+
+			lastScrollTop = scrollTop;
+		});
+
+		navbar.style.transition = 'transform 0.5s ease-in-out';
+	</script>
+
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
