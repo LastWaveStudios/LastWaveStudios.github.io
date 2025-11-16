@@ -2871,3 +2871,149 @@ screen and (max-height: 300px) {
     width: 100%;
     z-index: 1000;
 }
+
+.clean-section-divider {
+    padding: 100px 0;
+    text-align: center;
+    background: #f8f9fa;
+    position: relative;
+}
+
+.clean-section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.clean-section-divider.dark {
+    background: #2c3e50;
+    color: white;
+}
+
+.clean-section-divider.accent {
+    background: linear-gradient(135deg, #b08d57 0%, #1e3a8a 100%);
+    color: #e0f2fe;
+}
+
+.clean-section-divider h1 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 2.5em;
+}
+
+.clean-section-divider p {
+    font-size: 1.2em;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.stats-divider {
+    padding: 80px 0;
+    background: white;
+    text-align: center;
+}
+
+.stats-divider .counter {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.stats-divider .counter-desc {
+    font-size: 1.1em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.enemy-section,
+.tower-section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+}
+
+.enemy-section:last-child,
+.tower-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.enemy-content,
+.tower-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.enemy-content.reverse,
+.tower-content.reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.enemy-image,
+.tower-image {
+    flex: 0 0 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enemy-image img,
+.tower-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+.enemy-image img:hover,
+.tower-image img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: relative;
+}
+
+.enemy-text,
+.tower-text {
+    flex: 1;
+    text-align: left;
+}
+
+.enemy-text h4,
+.tower-text h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.enemy-text p,
+.tower-text p {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1em;
+    margin-bottom: 0;
+}
