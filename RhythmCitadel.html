@@ -45,12 +45,10 @@
 </div>
 
 <script>
-// Preloader function para Rhythm Citadel
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     const progressBar = document.querySelector('.progress-bar-preloader');
     
-    // Imágenes específicas de Rhythm Citadel para precargar
     const criticalImages = [
         'images/logo.png',
         'images/negra.png',
@@ -68,7 +66,6 @@ window.addEventListener('load', function() {
     const totalImages = criticalImages.length;
     let loadedImages = 0;
     
-    // Si no hay imágenes, ocultar inmediatamente
     if (totalImages === 0) {
         setTimeout(() => {
             preloader.style.opacity = '0';
@@ -80,11 +77,10 @@ window.addEventListener('load', function() {
         return;
     }
     
-    // Precargar imágenes críticas
     criticalImages.forEach(src => {
         const img = new Image();
         img.onload = imageLoaded;
-        img.onerror = imageLoaded; // En caso de error
+        img.onerror = imageLoaded; 
         img.src = src;
     });
     
@@ -92,12 +88,10 @@ window.addEventListener('load', function() {
         loadedImages++;
         const progress = (loadedImages / totalImages) * 100;
         
-        // Actualizar barra de progreso
         if (progressBar) {
             progressBar.style.width = progress + '%';
         }
         
-        // Cuando todas las imágenes estén cargadas
         if (loadedImages === totalImages) {
             setTimeout(() => {
                 preloader.style.opacity = '0';
@@ -109,7 +103,6 @@ window.addEventListener('load', function() {
         }
     }
     
-    // Timeout de seguridad (máximo 6 segundos)
     setTimeout(() => {
         preloader.style.opacity = '0';
         setTimeout(() => {
@@ -150,7 +143,7 @@ window.addEventListener('load', function() {
 	<div id="headerwrap2">
 		<header class="clearfix">
 			<h1 class="animated bounceIn">Rhythm Citadel</h1>
-			<a href="GDD-Grupo5.pdf" download="GDD-RhythmCitadel.pdf" class="btn homebtn smoothScroll">Learn More <i
+			<a href="GDD-Grupo5.pdf" download="GDD-Grupo5.pdf" class="btn homebtn smoothScroll">Learn More <i
 					class="el-icon-chevron-down homeicon"></i></a>
 		</header>
 	</div>
@@ -312,7 +305,7 @@ window.addEventListener('load', function() {
 	<div class="greywrap">
 		<div class="container">
 			<div class="row">
-				<!-- Mecánica 1: Fases -->
+				<!-- Fases -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Phases</h2>
@@ -323,7 +316,7 @@ window.addEventListener('load', function() {
 					</div>
 				</div>
 
-				<!-- Mecánica 2: Activación de Torres -->
+				<!-- Activación de Torres -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Turret Activation</h2>
@@ -332,7 +325,7 @@ window.addEventListener('load', function() {
 					</div>
 				</div>
 
-				<!-- Mecánica 3: Patrones Rítmicos -->
+				<!-- Patrones Rítmicos -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Rhythmic Patterns</h2>
@@ -341,7 +334,7 @@ window.addEventListener('load', function() {
 					</div>
 				</div>
 
-				<!-- Mecánica 4: Dificultades -->
+				<!-- Dificultades -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Difficulties</h2>
@@ -354,7 +347,7 @@ window.addEventListener('load', function() {
 					</div>
 				</div>
 
-				<!-- Mecánica 5: Defensas Tácticas -->
+				<!-- Defensas Tácticas -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Tactical Defenses</h2>
@@ -362,7 +355,7 @@ window.addEventListener('load', function() {
 					</div>
 				</div>
 
-				<!-- Mecánica 6: Economía -->
+				<!-- Economía -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
 					<div class="fade-up service-info">
 						<h2>Economy</h2>
@@ -470,7 +463,6 @@ window.addEventListener('load', function() {
 	</div>
 
 	<script>
-		// Controlar la visibilidad del navbar al hacer scroll
 		let lastScrollTop = 0;
 		const navbar = document.querySelector('.navbar');
 
