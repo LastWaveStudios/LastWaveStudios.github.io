@@ -33,6 +33,93 @@
     <![endif]-->
 </head>
 
+<!-- Preloader -->
+<div id="preloader">
+    <div class="preloader-content">
+        <div class="spinner"></div>
+        <p>Loading Rhythm Citadel...</p>
+        <div class="progress-container">
+            <div class="progress-bar-preloader"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Preloader function para Rhythm Citadel
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.querySelector('.progress-bar-preloader');
+    
+    // Imágenes específicas de Rhythm Citadel para precargar
+    const criticalImages = [
+        'images/logo.png',
+        'images/negra.png',
+        'images/blanca.png',
+        'images/silencio.png',
+        'images/redonda.png',
+        'images/corchea.png',
+        'images/sol.png',
+        'images/trompetas.png',
+        'images/piano.png',
+        'images/violin.png',
+        'images/tambor.png'
+    ];
+    
+    const totalImages = criticalImages.length;
+    let loadedImages = 0;
+    
+    // Si no hay imágenes, ocultar inmediatamente
+    if (totalImages === 0) {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                document.body.classList.add('loaded');
+            }, 500);
+        }, 1000);
+        return;
+    }
+    
+    // Precargar imágenes críticas
+    criticalImages.forEach(src => {
+        const img = new Image();
+        img.onload = imageLoaded;
+        img.onerror = imageLoaded; // En caso de error
+        img.src = src;
+    });
+    
+    function imageLoaded() {
+        loadedImages++;
+        const progress = (loadedImages / totalImages) * 100;
+        
+        // Actualizar barra de progreso
+        if (progressBar) {
+            progressBar.style.width = progress + '%';
+        }
+        
+        // Cuando todas las imágenes estén cargadas
+        if (loadedImages === totalImages) {
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.classList.add('loaded');
+                }, 500);
+            }, 800);
+        }
+    }
+    
+    // Timeout de seguridad (máximo 6 segundos)
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            document.body.classList.add('loaded');
+        }, 500);
+    }, 6000);
+});
+</script>
+
 <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
 	<!-- ==== NAVBAR ==== -->
@@ -225,11 +312,9 @@
 	<div class="greywrap">
 		<div class="container">
 			<div class="row">
+				<!-- Mecánica 1: Fases -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-time"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Phases</h2>
 						<ul>
 							<li><strong>Preparation Phase:</strong> Place turrets and assign their inputs.</li>
@@ -238,33 +323,27 @@
 					</div>
 				</div>
 
+				<!-- Mecánica 2: Activación de Torres -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-star"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Turret Activation</h2>
 						<p>Each turret follows its rhythmic pattern. Upgrades modify area of effect, range, damage,
 							and attack frequency.</p>
 					</div>
 				</div>
 
+				<!-- Mecánica 3: Patrones Rítmicos -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-user"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Rhythmic Patterns</h2>
 						<p>Each turret has a fixed pattern matching the background song's beat, allowing for difficulty
 							adjustments with regular rhythms or syncopations.</p>
 					</div>
 				</div>
 
+				<!-- Mecánica 4: Dificultades -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-time"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Difficulties</h2>
 						<ul>
 							<li><strong>Piano Mode:</strong> Base stats</li>
@@ -275,21 +354,17 @@
 					</div>
 				</div>
 
+				<!-- Mecánica 5: Defensas Tácticas -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-star"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Tactical Defenses</h2>
 						<p>In addition to turrets, use barriers, pushes, and slowdowns for strategic advantage.</p>
 					</div>
 				</div>
 
+				<!-- Mecánica 6: Economía -->
 				<div class="col-md-4 col-sm-4 col-xs-6 callout">
-					<div class="col-md-3 service-icon-wrapper img-circle">
-						<i class="icon el-icon-user"></i>
-					</div>
-					<div class="col-md-9 fade-up service-info">
+					<div class="fade-up service-info">
 						<h2>Economy</h2>
 						<p>Use Vinyls currency to place and upgrade turrets. Earn more by defeating enemies for
 							optimal defense placement.</p>
@@ -300,7 +375,7 @@
 	</div>
 
 	<!-- ==== TOWERS SECTION ==== -->
-	<section class="clean-section-divider" id="towers">
+<section class="clean-section-divider" id="towers" style="background: transparent; border: none; padding: 60px 0;">
 		<div class="container">
 			<h1 class="fade-down">Towers</h1>
 			<p class="fade-up">Musical instruments that don't just play — they fight</p>
