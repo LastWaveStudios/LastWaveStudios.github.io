@@ -27,13 +27,20 @@
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
 
 
-
 	<meta name="description"
 		content="Last Wave Studios - Indie game developers creating Rhythm Citadel, a rhythmic tower defense game">
 	<meta name="keywords" content="indie games, rhythm games, tower defense, game development, Rhythm Citadel">
 	<meta property="og:title" content="Last Wave Studios">
 	<meta property="og:description" content="Surfing the last wave of game innovation">
 	<meta property="og:image" content="images/logo.png">
+
+	<!-- Text fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Share+Tech&display=swap"
+		rel="stylesheet">
+
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -64,92 +71,92 @@
 
 <!-- Preloader -->
 <div id="preloader">
-    <div class="preloader-content">
-        <div class="spinner"></div>
-        <p>Cargando Last Wave Studios...</p>
-        <!-- Opcional: Barra de progreso -->
-        <div class="progress-container">
-            <div class="progress-bar-preloader"></div>
-        </div>
-    </div>
+	<div class="preloader-content">
+		<div class="spinner"></div>
+		<p>Cargando Last Wave Studios...</p>
+		<!-- Opcional: Barra de progreso -->
+		<div class="progress-container">
+			<div class="progress-bar-preloader"></div>
+		</div>
+	</div>
 </div>
 
 <script>
-window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.querySelector('.progress-bar-preloader');
-    
-    const images = document.images;
-    const totalImages = images.length;
-    let loadedImages = 0;
-    
-    if (totalImages === 0) {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-                document.body.classList.add('loaded');
-            }, 500);
-        }, 1000);
-        return;
-    }
-    
-    Array.from(images).forEach(img => {
-        if (img.complete) {
-            imageLoaded();
-        } else {
-            img.addEventListener('load', imageLoaded);
-            img.addEventListener('error', imageLoaded); 
-        }
-    });
-    
-    function imageLoaded() {
-        loadedImages++;
-        const progress = (loadedImages / totalImages) * 100;
-        
-        if (progressBar) {
-            progressBar.style.width = progress + '%';
-        }
-        
-        if (loadedImages === totalImages) {
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                    document.body.classList.add('loaded');
-                }, 500);
-            }, 500);
-        }
-    }
-    
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-            document.body.classList.add('loaded');
-        }, 500);
-    }, 8000);
-});
+	window.addEventListener('load', function () {
+		const preloader = document.getElementById('preloader');
+		const progressBar = document.querySelector('.progress-bar-preloader');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const criticalImages = [
-        'images/logo.png',
-        'images/Cartel.png',
-        'images/logoJuego.png',
-        'images/Arturo.png',
-        'images/Ángela.png',
-        'images/Claudia.png',
-        'images/Ivan.png',
-        'images/George.png',
-        'images/Unai.png',
-        'images/engranaje.png'
-    ];
-    
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-});
+		const images = document.images;
+		const totalImages = images.length;
+		let loadedImages = 0;
+
+		if (totalImages === 0) {
+			setTimeout(() => {
+				preloader.style.opacity = '0';
+				setTimeout(() => {
+					preloader.style.display = 'none';
+					document.body.classList.add('loaded');
+				}, 500);
+			}, 1000);
+			return;
+		}
+
+		Array.from(images).forEach(img => {
+			if (img.complete) {
+				imageLoaded();
+			} else {
+				img.addEventListener('load', imageLoaded);
+				img.addEventListener('error', imageLoaded);
+			}
+		});
+
+		function imageLoaded() {
+			loadedImages++;
+			const progress = (loadedImages / totalImages) * 100;
+
+			if (progressBar) {
+				progressBar.style.width = progress + '%';
+			}
+
+			if (loadedImages === totalImages) {
+				setTimeout(() => {
+					preloader.style.opacity = '0';
+					setTimeout(() => {
+						preloader.style.display = 'none';
+						document.body.classList.add('loaded');
+					}, 500);
+				}, 500);
+			}
+		}
+
+		setTimeout(() => {
+			preloader.style.opacity = '0';
+			setTimeout(() => {
+				preloader.style.display = 'none';
+				document.body.classList.add('loaded');
+			}, 500);
+		}, 8000);
+	});
+
+	document.addEventListener('DOMContentLoaded', function () {
+		const criticalImages = [
+			'images/logo.png',
+			'images/Cartel.png',
+			'images/logoJuego.png',
+			'images/Arturo.png',
+			'images/Ángela.png',
+			'images/Claudia.png',
+			'images/Ivan.png',
+			'images/George.png',
+			'images/Unai.png',
+			'images/engranaje.png'
+		];
+
+		criticalImages.forEach(src => {
+			const img = new Image();
+			img.src = src;
+		});
+	});
 </script>
 
 
@@ -173,7 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			<div class="document-section">
 				<div class="section-content">
 					<div class="section-image">
-						<img src="images/Cartel.png" alt="Rhythm Citadel Logo" class="img-responsive">
+						<img src="images/Cartel.png" alt="Rhythm Citadel Logo"
+							class="img-responsive img-rhythm-citadel">
 					</div>
 					<div class="section-text">
 						<h2>Rhythm Citadel</h2>
@@ -199,7 +207,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			<div class="document-section">
 				<div class="section-content">
 					<div class="section-image">
-						<img src="images/logoJuego.png" alt="Game Development Logo" class="img-responsive">
+						<img src="images/logoJuego.png" alt="Game Development Logo"
+							class="img-responsive img-game-development">
 					</div>
 					<div class="section-text">
 						<h2>Game in development</h2>
@@ -208,21 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
 					</div>
 				</div>
 			</div>
-
-			<!-- Future plans -->
-			<div class="document-section">
-				<div class="section-content">
-					<div class="section-image">
-						<img src="images/logo.png" alt="Poster Image" class="img-responsive">
-					</div>
-					<div class="section-text">
-						<h2>Future plans</h2>
-						<p>We want to continue developing Rhythm Citadel for a long time. For future updates, you can
-							expect more enemies, more bosses, more levels, and of course, a lot of fun!</p>
-					</div>
-				</div>
-			</div>
-
 		</div>
 	</div>
 
@@ -233,6 +227,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		<!-- ==== DEVELOPMENT ==== -->
 		<div class="container">
+			<hr>
+
 			<h2 class="centered">Rhythm Citadel Development Progress</h2>
 			<div class="progress-bars">
 				<div class="progress-item">
@@ -265,22 +261,31 @@ document.addEventListener('DOMContentLoaded', function() {
 			<div class="milestones">
 				<h3 class="centered">Upcoming Milestones</h3>
 				<div class="milestone-list">
-					<div class="milestone">
+					<div class="milestone"
+						data-desc="First playable version with core mechanics. Limited testing with selected users to gather feedback and identify bugs.">
 						<span class="milestone-date">October 2025</span>
 						<span class="milestone-desc">Alpha Testing</span>
 					</div>
-					<div class="milestone">
+					<div class="milestone"
+						data-desc="Feature-complete version open to public testing. All core gameplay elements implemented and balanced.">
 						<span class="milestone-date">November 2025</span>
 						<span class="milestone-desc">Beta Release</span>
 					</div>
-					<div class="milestone">
+					<div class="milestone"
+						data-desc="Final version release on major platforms. Complete game with all features, levels, and polished experience.">
 						<span class="milestone-date">December 2025</span>
 						<span class="milestone-desc">Official Launch</span>
 					</div>
-					<div class="milestone">
+					<div class="milestone"
+						data-desc="Regular content updates including new levels, enemies, towers, and gameplay features based on community feedback.">
 						<span class="milestone-date">2026+</span>
 						<span class="milestone-desc">Continuous Updates</span>
 					</div>
+				</div>
+				<!-- Panel de descripción -->
+				<div class="milestone-description-panel" id="milestone-description">
+					<h4 id="milestone-title">Selecciona un hito</h4>
+					<p id="milestone-detail">Haz clic en cualquier hito para ver los detalles.</p>
 				</div>
 			</div>
 		</div>
@@ -289,8 +294,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	<!-- ==== ABOUT ==== -->
 	<div class="container" id="team" name="team">
 		<div class="row white">
+
 			<h1 class="fade-down centered">A LITTLE ABOUT US</h1>
-			<hr>
 
 			<div class="fade-up col-md-6">
 				<p>We are an indie studio made up of dreamers and passionate video game enthusiasts. Our mission is to
@@ -334,8 +339,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			</div>
 
 			<div class="engranaje-central">
-    <img src="images/engranaje.png" alt="Gear" class="engranaje-img">
-</div>
+				<img src="images/engranaje.png" alt="Gear" class="engranaje-img">
+			</div>
 		</div>
 
 		<div class="info-panel" id="info-panel">
@@ -367,67 +372,67 @@ document.addEventListener('DOMContentLoaded', function() {
 	</div>
 
 	<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const circle = document.getElementById("circle");
-    const infoPanel = document.getElementById("info-panel");
-    const memberContainers = circle.querySelectorAll(".member-container");
-    const engranaje = document.querySelector('.engranaje-central');
+		document.addEventListener("DOMContentLoaded", () => {
+			const circle = document.getElementById("circle");
+			const infoPanel = document.getElementById("info-panel");
+			const memberContainers = circle.querySelectorAll(".member-container");
+			const engranaje = document.querySelector('.engranaje-central');
 
-    const members = [
-        { name: "Arturo Carretero Aguado", desc: "Project Leader and Main Programmer." },
-        { name: "Ángela Fernández Hernández", desc: "Character Designer and Concept Artist." },
-        { name: "Claudia Alejandra Fernández Torrejón", desc: "2D Animator and Artist." },
-        { name: "Iván García García", desc: "Sound and Music Developer." },
-        { name: "George Picu Hordoan", desc: "AI and Enemy Behavior Developer." },
-        { name: "Unai Retes Corada", desc: "UI/UX Developer and Social Media Manager." }
-    ];
+			const members = [
+				{ name: "Arturo Carretero Aguado", desc: "Project Leader and Main Programmer." },
+				{ name: "Ángela Fernández Hernández", desc: "Character Designer and Concept Artist." },
+				{ name: "Claudia Alejandra Fernández Torrejón", desc: "2D Animator and Artist." },
+				{ name: "Iván García García", desc: "Sound and Music Developer." },
+				{ name: "George Picu Hordoan", desc: "AI and Enemy Behavior Developer." },
+				{ name: "Unai Retes Corada", desc: "UI/UX Developer and Social Media Manager." }
+			];
 
-    const initialRotation = -300;
-    const engranajeOffset = 45;
-    let currentRotation = initialRotation;
+			const initialRotation = -300;
+			const engranajeOffset = 45;
+			let currentRotation = initialRotation;
 
-    circle.style.transform = `rotate(${currentRotation}deg)`;
-    if (engranaje) engranaje.style.transform = `translate(-50%, -50%) rotate(${currentRotation + engranajeOffset}deg)`;
+			circle.style.transform = `rotate(${currentRotation}deg)`;
+			if (engranaje) engranaje.style.transform = `translate(-50%, -50%) rotate(${currentRotation + engranajeOffset}deg)`;
 
-    memberContainers.forEach((container) => {
-        const img = container.querySelector("img");
-        img.style.transform = `rotate(${-currentRotation}deg)`;
-        img.style.imageRendering = 'auto'; 
-        img.style.msInterpolationMode = 'bicubic'; 
-    });
+			memberContainers.forEach((container) => {
+				const img = container.querySelector("img");
+				img.style.transform = `rotate(${-currentRotation}deg)`;
+				img.style.imageRendering = 'auto';
+				img.style.msInterpolationMode = 'bicubic';
+			});
 
-    memberContainers.forEach((container, index) => {
-        const img = container.querySelector("img");
-        img.addEventListener("click", () => {
-            const targetRotation = -index * 60;
+			memberContainers.forEach((container, index) => {
+				const img = container.querySelector("img");
+				img.addEventListener("click", () => {
+					const targetRotation = -index * 60;
 
-            let rotationDiff = targetRotation - currentRotation;
+					let rotationDiff = targetRotation - currentRotation;
 
-            if (rotationDiff > 180) rotationDiff -= 360;
-            if (rotationDiff < -180) rotationDiff += 360;
+					if (rotationDiff > 180) rotationDiff -= 360;
+					if (rotationDiff < -180) rotationDiff += 360;
 
-            currentRotation += rotationDiff;
-            circle.style.transform = `rotate(${currentRotation}deg)`;
+					currentRotation += rotationDiff;
+					circle.style.transform = `rotate(${currentRotation}deg)`;
 
-            if (engranaje) {
-                engranaje.style.transform = `translate(-50%, -50%) rotate(${currentRotation + engranajeOffset}deg)`;
-            }
+					if (engranaje) {
+						engranaje.style.transform = `translate(-50%, -50%) rotate(${currentRotation + engranajeOffset}deg)`;
+					}
 
-            memberContainers.forEach((container) => {
-                const img = container.querySelector("img");
-                img.style.transform = `rotate(${-currentRotation}deg)`;
-                img.style.imageRendering = 'auto'; 
-                img.style.msInterpolationMode = 'bicubic'; 
-            });
+					memberContainers.forEach((container) => {
+						const img = container.querySelector("img");
+						img.style.transform = `rotate(${-currentRotation}deg)`;
+						img.style.imageRendering = 'auto';
+						img.style.msInterpolationMode = 'bicubic';
+					});
 
-            infoPanel.innerHTML = `
+					infoPanel.innerHTML = `
             <h2>${members[index].name}</h2>
             <p>${members[index].desc}</p>
         `;
-        });
-    });
-});
-</script>
+				});
+			});
+		});
+	</script>
 
 	<script>
 		let lastScrollTop = 0;
@@ -446,6 +451,49 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 
 		navbar.style.transition = 'transform 0.5s ease-in-out';
+	</script>
+
+	<script>
+		// Funcionalidad para los milestones
+		document.addEventListener('DOMContentLoaded', function () {
+			const milestones = document.querySelectorAll('.milestone');
+			const descriptionPanel = document.getElementById('milestone-description');
+			const milestoneTitle = document.getElementById('milestone-title');
+			const milestoneDetail = document.getElementById('milestone-detail');
+
+			milestones.forEach(milestone => {
+				milestone.addEventListener('click', function () {
+					// Remover clase active de todos los milestones
+					milestones.forEach(m => m.classList.remove('active'));
+
+					// Añadir clase active al milestone clickeado
+					this.classList.add('active');
+
+					// Obtener la descripción del atributo data-desc
+					const description = this.getAttribute('data-desc');
+					const title = this.querySelector('.milestone-desc').textContent;
+					const date = this.querySelector('.milestone-date').textContent;
+
+					// Actualizar el panel de descripción
+					milestoneTitle.textContent = `${title} - ${date}`;
+					milestoneDetail.textContent = description;
+
+					// Destacar el panel
+					descriptionPanel.style.background = '#e3f2fd';
+					descriptionPanel.style.borderLeftColor = '#3498db';
+
+					// Quitar el destaque después de 2 segundos
+					setTimeout(() => {
+						descriptionPanel.style.background = '#f8f9fa';
+					}, 2000);
+				});
+			});
+
+			// Inicializar con el primer milestone
+			if (milestones.length > 0) {
+				milestones[0].click();
+			}
+		});
 	</script>
 
 	<script type="text/javascript" src="js/bootstrap.js"></script>
