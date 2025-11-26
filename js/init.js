@@ -35,15 +35,11 @@ function rotateCMCarousel(direction) {
 var windowsHeight = $(window).height();
 $('#headerwrap').css('height', windowsHeight + 'px');
 
-$('#headerwrap').backstretch([
-  "images/bg1.gif"/*
-      , "images/bg2.jpg"
-      , "images/bg3.jpg"*/
-]/*, {duration: 3000, fade: 750}*/);
+if ($('#headerwrap').data('backstretch')) {
+  $('#headerwrap').backstretch('destroy');
+}
 
-$('#headerwrap2').css('height', windowsHeight + 'px');
 
-$('#headerwrap2').backstretch(["images/bg1.jpg"]);
 var indiceActual = 0;
 var textos = [
   "The music box"/*,
@@ -54,11 +50,6 @@ var first = true;
 var ButtonPressed = false;
 $('#Backgrounds').css('height', windowsHeight + 'px');
 
-$('#Backgrounds').backstretch([
-  "images/Background1.jpg"/*
-      , "images/bg2.jpg"
-      , "images/bg3.jpg"*/
-]);
 
 function actualizarTexto() {
   // para hacer transición suave (opcional)
@@ -68,19 +59,7 @@ function actualizarTexto() {
 }
 
 $('#banner-text').text(textos[indiceActual]); // texto inicial
-/*
-$('#prev').on('click', function () {
-  $('#Backgrounds').backstretch("prev");
-  indiceActual = (indiceActual - 1 + textos.length) % textos.length; // retrocede
-  ButtonPressed=true;
-});
 
-$('#next').on('click', function () {
-  $('#Backgrounds').backstretch("next");
-  indiceActual = (indiceActual + 1) % textos.length; // avanza
-  ButtonPressed=true;
-});
-*/
 $('#Backgrounds').on('backstretch.after', function (e, instance, index) {
   if (first) {
     first = false
@@ -123,30 +102,6 @@ jQuery(document).ready(function () {
 
   var serviceWidth = $('.service-icon-wrapper').width() + 30;
   $('.service-icon-wrapper .icon').css('line-height', serviceWidth + 'px');
-
-  $("#logo-slider").owlCarousel({
-    items: 6,
-    pagination: true,
-    navigationText: [
-      "<i class='el-icon-chevron-left icon-white'></i>",
-      "<i class='el-icon-chevron-right icon-white'></i>"
-    ]
-  });
-
-  $("#portfolio-carousel").owlCarousel({
-    items: 3,
-    pagination: false,
-    navigation: true,
-    navigationText: [
-      "<i class='el-icon-chevron-left icon-white'></i>",
-      "<i class='el-icon-chevron-right icon-white'></i>"
-    ]
-  });
-
-  $('.launch-lb').magnificPopup({
-    type: 'image',
-    mainClass: 'mfp-fade'
-  });
 
   $("body").niceScroll({
     cursorcolor: '#202020',
