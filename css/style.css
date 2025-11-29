@@ -9,13 +9,14 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #000000;
 }
 
 body {
     font-family: 'Share Tech';
     font-weight: 300;
     font-size: 16px;
-    color: #555;
+    color: #000000 !important;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
@@ -28,6 +29,8 @@ h4,
 h5,
 h6 {
     font-family: 'Orbitron', sans-serif;
+    color: #FFD700 !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
 }
 
 /* ==========================================================================
@@ -136,7 +139,7 @@ body.loaded {
     padding-top: 25px;
     padding-bottom: 25px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -156,6 +159,16 @@ body.loaded {
     font-size: 30px;
     font-weight: bold;
     color: #3498db;
+}
+
+/* ==========================================================================
+    TÍTULO
+   ========================================================================== */
+
+#headerwrap2 header h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 4em;
 }
 
 /* ==========================================================================
@@ -292,7 +305,7 @@ body.loaded {
 }
 
 .section-text p {
-    color: #444;
+    color: #000000;
     line-height: 1.8;
     font-size: 1.1em;
     margin-bottom: 15px;
@@ -429,9 +442,10 @@ body.loaded {
 }
 
 .milestone-description-panel p {
-    color: #555;
+    color: #000000;
     line-height: 1.6;
     font-size: 1em;
+    font-weight: 200;
     margin: 0;
 }
 
@@ -503,7 +517,6 @@ body.loaded {
     z-index: 4;
 }
 
-/* POSICIONES ORIGINALES DE LOS MIEMBROS */
 .circle .member-container:nth-child(1) {
     transform: translate(140px, 0);
 }
@@ -552,7 +565,7 @@ body.loaded {
 }
 
 .info-panel {
-    max-width: 300px;
+    max-width: 350px;
     min-height: 150px;
     text-align: left;
     padding: 15px;
@@ -573,20 +586,26 @@ body.loaded {
     margin-bottom: 40px;
 }
 
-.container .row.white p {
-    line-height: 1.8;
-    font-size: 1.1em;
-    color: #000000;
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 50px;
-}
-
 body.rhythm-citadel-page #story .row.white {
     background: transparent !important;
     backdrop-filter: none !important;
 }
 
+#story .col-md-12 {
+    margin: 0 auto;
+    float: none;
+    max-width: 750px;
+    display: block;
+}
+
+#story p {
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.3em;
+    font-weight: 200;
+}
 
 /* ==========================================================================
    STATS SECTION (Rhythm Citadel)
@@ -610,7 +629,7 @@ body.rhythm-citadel-page #story .row.white {
 .stats-divider .counter-desc {
     /*Texto debajo de numeros*/
     font-size: 1.1em;
-    color: #8B4513;
+    color: #FFD700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -672,23 +691,13 @@ body.rhythm-citadel-page #story .row.white {
     text-align: left;
 }
 
-.enemy-text h4,
-.tower-text h4 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #ccc123;
-    font-size: 1.5em;
-    font-weight: 600;
-}
-
 .enemy-text p,
 .tower-text p {
-    color: #444;
-    line-height: 1.6;
-    font-size: 1em;
-    margin-bottom: 0;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #000000;
+    font-size: 1.3em;
+    font-weight: 200;
 }
 
 .enemy-section {
@@ -706,43 +715,10 @@ body.rhythm-citadel-page #towers+.container .row.white {
     backdrop-filter: none !important;
 }
 
-/* Mejorar legibilidad del texto en ambas secciones */
-body.rhythm-citadel-page #enemies .row.white h1,
-body.rhythm-citadel-page #enemies+.container .row.white h1,
-body.rhythm-citadel-page #towers .row.white h1,
-body.rhythm-citadel-page #towers+.container .row.white h1 {
-    color: #2c3e50 !important;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
-}
-
-body.rhythm-citadel-page #enemies .row.white .enemy-text p,
-body.rhythm-citadel-page #enemies+.container .row.white .enemy-text p,
-body.rhythm-citadel-page #towers .row.white .tower-text p,
-body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
-    color: #333 !important;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
 
 /* ==========================================================================
-   MECHANICS SECTION (Rhythm Citadel)
+   GAME MECHANICS SECTION (Rhythm Citadel)
    ========================================================================== */
-
-.clean-section-divider {
-    padding: 100px 0;
-    text-align: center;
-    background: transparent;
-    position: relative;
-}
-
-.clean-section-divider.dark {
-    background: #2c3e50;
-    color: white;
-}
-
-.clean-section-divider.accent {
-    background: linear-gradient(135deg, #b08d57 0%, #1e3a8a 100%);
-    color: #e0f2fe;
-}
 
 .clean-section-divider h1 {
     margin-bottom: 20px;
@@ -763,7 +739,7 @@ body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
 
 .service-info h2 {
     margin-top: 0;
-    border-bottom: 4px solid #2980b9;
+    border-bottom: 4px solid #D4AF37;
     padding-bottom: 15px;
     margin-bottom: 15px;
     font-size: 22px;
@@ -787,8 +763,8 @@ body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: rgb(32, 159, 218);
-    color: white;
+    background-color: #FFD700;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -801,6 +777,21 @@ body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
 
 .btn-Back:hover {
     background-color: rgba(0, 0, 0, 0.7);
+    color: #FFD700;
+}
+
+
+.clean-section-divider {
+    padding: 100px 0;
+    text-align: center;
+    background: transparent;
+    position: relative;
+}
+
+.clean-section-divider.accent {
+    background: #800020;
+    color: #FFD700;
+    border: 2px solid #D4AF37;
 }
 
 /* ==========================================================================
@@ -846,20 +837,21 @@ body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
     background-color: transparent;
     border-color: #2980b9;
     font-weight: 700;
-    border-radius: 0;
+    border-width: 3px;
+    border-radius: 10px;
     padding: 8px 16px;
     text-transform: uppercase;
 }
 
 .btn-success:hover {
     background-color: #2980b9;
-    border-color: #2980b9;
+    border-color: #0099ff;
     color: white;
 }
 
 .homebtn {
-    border: 3px solid #fff;
-    color: #fff;
+    border: 3px solid #FFD700;
+    color: #FFD700;
     border-radius: 0;
     padding: 15px 20px;
     font-size: 22px;
@@ -870,8 +862,8 @@ body.rhythm-citadel-page #towers+.container .row.white .tower-text p {
 }
 
 .homebtn:hover {
-    border: 3px solid #fff;
-    background-color: #fff;
+    border: 3px solid #FFD700;
+    background-color: #FFD700;
     color: #222;
     text-decoration: none;
 }
@@ -1050,11 +1042,20 @@ body.rhythm-citadel-page #headerwrap2 {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    /* Mantiene la proporción de la imagen */
     margin: 40px 0;
     border: none;
 }
 
 .callout {
     margin-left: 120px;
+}
+
+body:not(.rhythm-citadel-page) h1,
+body:not(.rhythm-citadel-page) h2,
+body:not(.rhythm-citadel-page) h3,
+body:not(.rhythm-citadel-page) h4,
+body:not(.rhythm-citadel-page) h5,
+body:not(.rhythm-citadel-page) h6 {
+    color: #3498db !important;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5) !important;
 }
