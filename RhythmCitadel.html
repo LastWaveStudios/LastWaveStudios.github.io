@@ -28,6 +28,7 @@
 		rel="stylesheet">
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,16 +41,28 @@
 <body class="rhythm-citadel-page" data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
 	<!-- NAVBAR -->
-	<nav class="navbar navbar-fixed-top" style="background: #D4AF37; padding: 12px 0;">
+	<nav class="navbar navbar-fixed-top" style="background: #aa8208; padding: 12px 0;">
 		<div class="container">
 			<div class="navbar-header">
+				<!-- Logo y título -->
 				<a class="navbar-brand" href="#headerwrap2"
 					style="display: flex; align-items: center; margin-top: 25px;">
 					<img src="images/logo.png" alt="Last Wave Studios Logo" style="height: 70px; margin-right: 15px;">
 					<span style="font-size: 30px; font-weight: bold; color: #000000;">Last Wave Studios</span>
 				</a>
+
+				<!-- Botón hamburguesa para móvil -->
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#navbar-collapse-rc" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 			</div>
-			<div class="navbar-collapse">
+
+			<!-- Menú de navegación -->
+			<div class="collapse navbar-collapse" id="navbar-collapse-rc">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#story" style="color: #000000;">Story</a></li>
 					<li><a href="#enemies" style="color: #000000;">Enemies</a></li>
@@ -88,42 +101,48 @@
 
 	<!-- STORY SECTION -->
 	<div class="container" id="story">
-		<div class="row white">
-			<h1 class="fade-down centered">The Game's Story</h1>
-			<div class="fade-up col-md-12">
-				<p>
-					Inside a music box lives a ballerina, who, by spinning, keeps the music alive. However, an army
-					of mechanical musical notes threatens to end her. These notes, which once danced to the same rhythm
-					as the ballerina and were her faithful defenders, have been corrupted by greed and fatigue from
-					always having to stay in tune with her. Now they march in rebellion to annihilate her.
-					<br><br>
-					But the ballerina is not alone. A group of instruments rises to her defense, ready to do
-					whatever it takes to allow their beloved ballerina to keep bringing the music box to life. They are
-					prepared
-					to take down any notes necessary to achieve this.
-				</p>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<h1 class="text-center fade-down">The Game's Story</h1>
+				<div class="fade-up">
+					<p class="text-justify">
+						Inside a music box lives a ballerina, who, by spinning, keeps the music alive. However, an army
+						of mechanical musical notes threatens to end her. These notes, which once danced to the same
+						rhythm
+						as the ballerina and were her faithful defenders, have been corrupted by greed and fatigue from
+						always having to stay in tune with her. Now they march in rebellion to annihilate her.
+						<br><br>
+						But the ballerina is not alone. A group of instruments rises to her defense, ready to do
+						whatever it takes to allow their beloved ballerina to keep bringing the music box to life. They
+						are
+						prepared
+						to take down any notes necessary to achieve this.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- STATS SECTION -->
 	<section class="stats-divider">
-		<div class="container center">
-			<div class="col-md-3">
-				<span class="counter">5</span>
-				<span class="counter-desc">Enemies</span>
-			</div>
-			<div class="col-md-3">
-				<span class="counter">1</span>
-				<span class="counter-desc">Bosses</span>
-			</div>
-			<div class="col-md-3">
-				<span class="counter">4</span>
-				<span class="counter-desc">Towers</span>
-			</div>
-			<div class="col-md-3">
-				<span class="counter">3</span>
-				<span class="counter-desc">Levels</span>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-6 col-sm-3">
+					<span class="counter">5</span>
+					<span class="counter-desc">Enemies</span>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<span class="counter">1</span>
+					<span class="counter-desc">Bosses</span>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<span class="counter">4</span>
+					<span class="counter-desc">Towers</span>
+				</div>
+				<div class="col-xs-6 col-sm-3">
+					<span class="counter">3</span>
+					<span class="counter-desc">Levels</span>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -134,6 +153,7 @@
 	<div class="container" id="enemies">
 		<h1 class="fade-down centered">Meet Our Mechanic Notes</h1>
 
+		<!-- Quarter Note -->
 		<div class="enemy-section">
 			<div class="enemy-content">
 				<div class="enemy-image">
@@ -143,10 +163,12 @@
 					<h4>Quarter</h4>
 					<p>Watch out for this rail-riding ground enemy. It may not be the fastest, but it steadily
 						advances, smashing into your towers and the ballerina with brute force.</p>
+
 				</div>
 			</div>
 		</div>
 
+		<!-- Half Note -->
 		<div class="enemy-section">
 			<div class="enemy-content reverse">
 				<div class="enemy-image">
@@ -161,6 +183,7 @@
 			</div>
 		</div>
 
+		<!-- Quarter Rest -->
 		<div class="enemy-section">
 			<div class="enemy-content">
 				<div class="enemy-image">
@@ -181,6 +204,7 @@
 	<div class="container">
 		<h1 class="fade-down centered">Special Enemies</h1>
 
+		<!-- Whole Note -->
 		<div class="enemy-section">
 			<div class="enemy-content reverse">
 				<div class="enemy-image">
@@ -190,10 +214,12 @@
 					<h4>Whole</h4>
 					<p>Moves slowly along the rails, but its blows pack a serious punch. It's tougher to take
 						down than most enemies out there.</p>
+
 				</div>
 			</div>
 		</div>
 
+		<!-- Eighth Note -->
 		<div class="enemy-section">
 			<div class="enemy-content">
 				<div class="enemy-image">
@@ -203,6 +229,7 @@
 					<h4>Eighth</h4>
 					<p>Lightning fast, striking twice in a flash. You need to destroy both notes to defeat it.
 						Take down one, and the other will rage, speeding up and hitting even harder.</p>
+
 				</div>
 			</div>
 		</div>
@@ -213,13 +240,15 @@
 
 	<div class="container">
 		<h1 class="fade-down centered">Final Boss</h1>
+
+		<!-- G Musical Note Boss -->
 		<div class="enemy-section">
 			<div class="enemy-content reverse">
 				<div class="enemy-image">
 					<img src="images/sol.png" alt="G Musical Note" class="img-responsive">
 				</div>
 				<div class="enemy-text">
-					<h4>G - Musical Note</h4>
+					<h4>G - Treble Clef</h4>
 					<p>This boss moves slowly along the tracks, usually accompanied by several enemies which it
 						infects to steal their life and heal itself. It attacks by throwing acid droplets at the
 						ballerina. If it reaches her, it will take her down with a single hit.</p>
@@ -242,62 +271,50 @@
 			<!-- Fila 1 -->
 			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Phases</h2>
-						<ul>
-							<li><strong>Preparation Phase:</strong> Place turrets and assign their inputs.</li>
-							<li><strong>Combat Phase:</strong> Enemy horde begins, turrets activate with rhythm.</li>
-						</ul>
-					</div>
+					<h2>Phases</h2>
+					<ul>
+						<li><strong>Preparation Phase:</strong> Place turrets and assign their inputs.</li>
+						<li><strong>Combat Phase:</strong> Enemy horde begins, turrets activate with rhythm.</li>
+					</ul>
 				</div>
 
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Turret Activation</h2>
-						<p>Each turret follows its rhythmic pattern. Upgrades modify area of effect, range, damage,
-							and attack frequency.</p>
-					</div>
+					<h2>Turret Activation</h2>
+					<p>Each turret follows its rhythmic pattern. Upgrades modify area of effect, range, damage,
+						and attack frequency.</p>
 				</div>
 			</div>
 
 			<!-- Fila 2 -->
 			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Difficulties</h2>
-						<ul>
-							<li><strong>Piano Mode:</strong> Base stats</li>
-							<li><strong>Mezzo-Forte Mode:</strong> 1.25x multiplier</li>
-							<li><strong>Arpegio Mode:</strong> 1.5x multiplier</li>
-							<li><strong>Virtuoso Mode:</strong> 2x multiplier</li>
-						</ul>
-					</div>
+					<h2>Difficulties</h2>
+					<ul>
+						<li><strong>Piano Mode:</strong> Base stats</li>
+						<li><strong>Mezzo-Forte Mode:</strong> 1.25x multiplier</li>
+						<li><strong>Arpegio Mode:</strong> 1.5x multiplier</li>
+						<li><strong>Virtuoso Mode:</strong> 2x multiplier</li>
+					</ul>
 				</div>
 
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Rhythmic Patterns</h2>
-						<p>Each turret has a fixed pattern matching the background song's beat, allowing for
-							difficulty adjustments with regular rhythms or syncopations.</p>
-					</div>
+					<h2>Rhythmic Patterns</h2>
+					<p>Each turret has a fixed pattern matching the background song's beat, allowing for
+						difficulty adjustments with regular rhythms or syncopations.</p>
 				</div>
 			</div>
 
 			<!-- Fila 3 -->
 			<div class="row">
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Tactical Defenses</h2>
-						<p>In addition to turrets, use barriers, pushes, and slowdowns for strategic advantage.</p>
-					</div>
+					<h2>Tactical Defenses</h2>
+					<p>In addition to turrets, use barriers, pushes, and slowdowns for strategic advantage.</p>
 				</div>
 
 				<div class="col-md-4 col-sm-4 col-xs-12 callout col-md-offset-1">
-					<div class="fade-up service-info">
-						<h2>Economy</h2>
-						<p>Use Vinyls currency to place and upgrade turrets. Earn more by defeating enemies for
-							optimal defense placement.</p>
-					</div>
+					<h2>Economy</h2>
+					<p>Use Vinyls currency to place and upgrade turrets. Earn more by defeating enemies for
+						optimal defense placement.</p>
 				</div>
 			</div>
 		</div>
