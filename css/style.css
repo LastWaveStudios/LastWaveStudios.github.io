@@ -4,6 +4,10 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+/* ==========================================================================
+   ESTILOS GLOBALES
+   ========================================================================== */
+
 html,
 body {
     height: 100%;
@@ -31,6 +35,37 @@ h6 {
     font-family: 'Orbitron', sans-serif;
     color: #FFD700 !important;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+body:not(.rhythm-citadel-page) h1,
+body:not(.rhythm-citadel-page) h2,
+body:not(.rhythm-citadel-page) h3,
+body:not(.rhythm-citadel-page) h4,
+body:not(.rhythm-citadel-page) h5,
+body:not(.rhythm-citadel-page) h6 {
+    color: #3498db !important;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5) !important;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+}
+
+.centered {
+    text-align: center;
+}
+
+.white {
+    background: white;
+    padding: 60px 0;
+}
+
+.greywrap {
+    border-bottom: none !important;
+    margin-bottom: none !important;
+    margin-top: 40px !important;
 }
 
 /* ==========================================================================
@@ -148,7 +183,7 @@ body.loaded {
     display: flex;
     align-items: center;
     margin-top: 25px;
-    float: left; /* Añade esto para alinear a la izquierda */
+    float: left;
 }
 
 .navbar-brand img {
@@ -162,14 +197,277 @@ body.loaded {
     color: #3498db;
 }
 
-/* ==========================================================================
-    TÍTULO
-   ========================================================================== */
+.navbar-toggle {
+    margin: 0;
+    border: 1px solid #000000 !important;
+    order: 2;
+    margin-left: auto;
+    background: transparent !important;
+    padding: 9px 10px;
+    transition: all 0.3s ease;
+}
 
-#headerwrap2 header h1 {
-    font-family: 'Merriweather', serif;
-    font-weight: 900;
-    font-size: 4em;
+.navbar-toggle:hover,
+.navbar-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border-color: #000000 !important;
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #000000 !important;
+    height: 3px;
+    width: 22px;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 4px;
+}
+
+.navbar-toggle:hover .icon-bar {
+    background-color: #333333 !important;
+}
+
+.navbar-toggle.collapsed {
+    border-color: #000000 !important;
+}
+
+.navbar-toggle.collapsed .icon-bar {
+    background-color: #000000 !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #000000 !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000000 !important;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* NAVBAR - RESPONSIVE */
+/* Grande (992px y más) */
+@media (min-width: 992px) {
+    .navbar-header {
+        display: block;
+    }
+
+    .navbar-brand {
+        display: flex !important;
+        align-items: center;
+        margin-top: 5px !important;
+        float: left !important;
+        height: auto;
+    }
+
+    .navbar-brand img {
+        height: 70px !important;
+        margin-right: 15px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 30px !important;
+        color: #3498db !important;
+    }
+
+    .navbar-toggle {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        display: block !important;
+        padding-top: 5px !important;
+    }
+
+    .navbar-nav {
+        float: right !important;
+        margin: 0 !important;
+    }
+
+    .navbar-nav>li>a {
+        padding-top: 25px !important;
+        padding-bottom: 25px !important;
+        font-size: 18px !important;
+    }
+
+    .navbar>.container {
+        display: block;
+    }
+}
+
+/* Mediano (768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .navbar-brand {
+        display: flex !important;
+        align-items: center;
+        margin: 0 !important;
+        margin-top: 5px !important;
+        float: none !important;
+        flex-shrink: 0;
+        height: 55px;
+    }
+
+    .navbar-brand img {
+        height: 50px !important;
+        margin-right: 10px !important;
+        transition: none !important;
+    }
+
+    .navbar-brand span {
+        font-size: 22px !important;
+        white-space: nowrap;
+        transition: none !important;
+        line-height: 50px;
+        color: #3498db !important;
+    }
+
+    .navbar-toggle {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+        max-height: none !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        transition: none !important;
+        margin-top: 5px !important;
+    }
+
+    .navbar-collapse.collapse {
+        display: flex !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .navbar-nav {
+        width: auto;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-nav>li {
+        float: none;
+    }
+
+    .navbar-nav>li>a {
+        padding: 18px 10px !important;
+        font-size: 14px !important;
+        white-space: nowrap;
+        line-height: normal;
+    }
+
+    .navbar-default {
+        min-height: 70px !important;
+        padding: 8px 0 !important;
+    }
+}
+
+/* Pequeño (767px y menos) */
+@media (max-width: 767px) {
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 15px;
+        width: 100%;
+    }
+
+    .navbar-brand {
+        display: flex !important;
+        align-items: center;
+        margin: 0 !important;
+        flex: 1;
+        max-width: 80%;
+    }
+
+    .navbar-brand img {
+        height: 40px !important;
+        margin-right: 8px !important;
+    }
+
+    .navbar-brand span {
+        font-size: 18px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #3498db !important;
+    }
+
+    .navbar-toggle {
+        display: block !important;
+        margin: 0 !important;
+        order: 2;
+    }
+
+    .navbar-collapse {
+        clear: both;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .navbar-collapse.collapse.in,
+    .navbar-collapse.collapse.show {
+        max-height: 300px;
+    }
+
+    .navbar-nav {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav>li {
+        display: block;
+        float: none;
+    }
+
+    .navbar-nav>li>a {
+        padding: 12px 15px !important;
+        border-top: 1px solid #eee;
+        font-size: 15px;
+        display: block;
+    }
+}
+
+/* Muy pequeño (480px y menos) */
+@media (max-width: 480px) {
+    .navbar-brand span {
+        font-size: 16px !important;
+        color: #3498db !important;
+    }
+
+    .navbar-brand img {
+        height: 35px !important;
+    }
+
+    .navbar-toggle {
+        padding: 8px 9px;
+    }
+
+    .navbar-toggle .icon-bar {
+        width: 20px;
+    }
 }
 
 /* ==========================================================================
@@ -229,18 +527,42 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     color: white !important;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
     font-size: 1.5em !important;
-    /* Aumento moderado */
+}
+
+#headerwrap2 header h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 4em;
+}
+
+/* HEADER - RESPONSIVE */
+@media (max-width: 768px) {
+    #headerwrap2 {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    #headerwrap2 header h1 {
+        font-size: 2.5em;
+    }
+
+    #headerwrap header h1,
+    #headerwrap2 header h1 {
+        font-size: 2.5em;
+    }
+
+    #headerwrap header p {
+        font-size: 1.2em;
+    }
+
+    #headerwrap2 header p {
+        font-size: 1.2em;
+    }
 }
 
 /* ==========================================================================
    SECCIONES DE PROYECTOS (Página Principal)
    ========================================================================== */
-
-.greywrap {
-    border-bottom: none !important;
-    margin-bottom: none !important;
-    margin-top: 40px !important;
-}
 
 .document-section {
     border-bottom: none !important;
@@ -307,6 +629,40 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     margin-bottom: 15px;
     margin-left: 50px;
     margin-right: 50px;
+}
+
+/* SECCIONES PROYECTOS - RESPONSIVE */
+@media (max-width: 768px) {
+    .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-image {
+        margin: 0 auto 20px auto;
+        text-align: center;
+    }
+
+    .section-text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .section-text p {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .img-rhythm-citadel,
+    .img-game-development {
+        width: 200px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .section-image {
+        order: -1;
+    }
 }
 
 /* ==========================================================================
@@ -445,21 +801,83 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     margin: 0;
 }
 
+/* MILESTONES - RESPONSIVE */
+.milestone-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.milestone {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+}
+
+/* Pequeño */
+@media (min-width: 768px) {
+    .milestone-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .milestone {
+        min-width: auto;
+        margin-bottom: 0;
+        width: 100%;
+    }
+}
+
+/* Grande */
+@media (min-width: 992px) {
+    .milestone-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+    }
+
+    .milestone {
+        min-width: auto;
+    }
+}
+
+/* Muy pequeño */
+@media (max-width: 767px) {
+    .milestone-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .milestone {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* PROGRESS SECTION - RESPONSIVE */
+@media (max-width: 768px) {
+    .progress-section {
+        padding: 50px 0;
+    }
+
+    .progress-bar {
+        font-size: 12px;
+    }
+}
+
 /* ==========================================================================
    ABOUT US SECTION (Página Principal)
    ========================================================================== */
 
 .container .row.white h1.centered {
     color: #3498db;
-}
-
-.white {
-    background: white;
-    padding: 60px 0;
-}
-
-.centered {
-    text-align: center;
 }
 
 /* ==========================================================================
@@ -570,6 +988,84 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* CARRUSEL - RESPONSIVE */
+@media (max-width: 992px) {
+    .equipo-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .circle-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .engranaje-central {
+        width: 320px;
+        height: 320px;
+    }
+
+    .member-container {
+        width: 60px;
+        height: 60px;
+    }
+
+    .member-container img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .info-panel {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .equipo-container {
+        padding: 0 15px;
+    }
+
+    .circle-wrapper {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+    }
+
+    .engranaje-central {
+        width: 280px;
+        height: 280px;
+    }
+
+    .member-container {
+        width: 50px;
+        height: 50px;
+    }
+
+    .member-container img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .info-panel {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+
+    .engranaje-central {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 /* ==========================================================================
    STORY SECTION (Rhythm Citadel)
    ========================================================================== */
@@ -592,6 +1088,10 @@ body.rhythm-citadel-page #story .row.white {
     float: none;
     max-width: 750px;
     display: block;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 #story p {
@@ -602,6 +1102,77 @@ body.rhythm-citadel-page #story .row.white {
     font-size: 1.3em;
     font-weight: 200;
     color: white !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* STORY SECTION - RESPONSIVE */
+/* Mediano */
+@media (min-width: 769px) and (max-width: 991px) {
+    #story .col-md-12 {
+        max-width: 90%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    #story p {
+        font-size: 1.2em !important;
+    }
+}
+
+/* Pequeño */
+@media (max-width: 768px) {
+    #story .col-md-12 {
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0;
+    }
+
+    #story p {
+        font-size: 1.1em !important;
+        line-height: 1.7;
+        text-align: left;
+        hyphens: auto;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0 10px;
+    }
+
+    .container .row.white {
+        padding: 40px 0 !important;
+    }
+
+    .container .row.white h1.centered {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 1.8em !important;
+    }
+}
+
+/* Muy pequeño */
+@media (max-width: 480px) {
+    #story .col-md-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #story p {
+        font-size: 1em !important;
+        line-height: 1.6;
+        padding: 0 5px;
+        text-align: left;
+    }
+
+    .container .row.white {
+        padding: 30px 0 !important;
+    }
+
+    .container .row.white h1.centered {
+        font-size: 1.6em !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 /* ==========================================================================
@@ -615,7 +1186,6 @@ body.rhythm-citadel-page #story .row.white {
 }
 
 .stats-divider .counter {
-    /*Numeros contador*/
     display: block;
     font-size: 3em;
     font-weight: bold;
@@ -624,7 +1194,6 @@ body.rhythm-citadel-page #story .row.white {
 }
 
 .stats-divider .counter-desc {
-    /*Texto debajo de numeros*/
     font-size: 1.1em;
     color: #FFD700;
     text-transform: uppercase;
@@ -717,6 +1286,150 @@ body.rhythm-citadel-page section.clean-section-divider#towers p.fade-up {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
+.enemy-section {
+    margin-bottom: 50px;
+}
+
+.enemy-text h4 {
+    color: #FFD700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.enemy-text p {
+    color: white;
+    font-size: 1.3em;
+    font-weight: 200;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.enemy-img,
+.tower-img {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* ENEMIES - RESPONSIVE */
+@media (max-width: 768px) {
+
+    .enemy-content,
+    .enemy-content.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px !important;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    .enemy-image {
+        order: 2;
+        margin-top: 10px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .enemy-text {
+        order: 1;
+        text-align: center;
+        margin-bottom: 5px !important;
+    }
+
+    .enemy-image img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 5px auto;
+    }
+
+    .enemy-text h4 {
+        font-size: 1.4em;
+        text-align: center;
+        margin-bottom: 8px !important;
+        line-height: 1.2;
+    }
+
+    .enemy-text p {
+        font-size: 1.05em;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 8px !important;
+        line-height: 1.5;
+    }
+
+    .enemy-section {
+        margin-bottom: 25px !important;
+        padding: 15px 10px !important;
+    }
+
+    .tower-content,
+    .tower-content.reverse {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .tower-content.reverse {
+        flex-direction: column !important;
+    }
+
+    .tower-image {
+        margin-bottom: 20px;
+        order: 2;
+    }
+
+    .tower-text {
+        order: 1;
+        text-align: center;
+    }
+
+    .tower-image img,
+    .enemy-image img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .enemy-img,
+    .tower-img {
+        max-width: 150px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .enemy-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .enemy-content,
+    .enemy-content.reverse {
+        gap: 8px !important;
+        padding: 0 5px;
+    }
+
+    .enemy-text h4 {
+        font-size: 1.3em !important;
+        margin-bottom: 6px !important;
+    }
+
+    .enemy-text p {
+        font-size: 1em !important;
+        line-height: 1.4 !important;
+        margin-bottom: 6px !important;
+    }
+
+    .enemy-image {
+        margin-top: 8px !important;
+    }
+
+    .enemy-section {
+        margin-bottom: 20px !important;
+        padding: 10px 5px !important;
+    }
+}
+
 /* ==========================================================================
    GAME MECHANICS SECTION (Rhythm Citadel)
    ========================================================================== */
@@ -765,6 +1478,153 @@ body.rhythm-citadel-page section.clean-section-divider#mechanics p.fade-up {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
 }
 
+.service-info {
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-radius: 10px;
+    border-left: 4px solid #FFD700;
+}
+
+.service-info h2 {
+    color: #FFD700;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+}
+
+.service-info ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.service-info li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: white;
+}
+
+.service-info p {
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.service-info h2 {
+    border-bottom: 3px solid #FFD700;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.service-info p,
+.service-info li {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+body.rhythm-citadel-page .service-info h2,
+body.rhythm-citadel-page .enemy-section h4 {
+    color: #FFD700 !important;
+}
+
+body.rhythm-citadel-page .service-info p,
+body.rhythm-citadel-page .service-info li,
+body.rhythm-citadel-page .enemy-section p {
+    color: white !important;
+}
+
+body.rhythm-citadel-page .service-info strong,
+body.rhythm-citadel-page .enemy-section strong {
+    color: #FFD700 !important;
+}
+
+body.rhythm-citadel-page #mechanics .clean-section-divider p,
+body.rhythm-citadel-page #towers .clean-section-divider p {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+    font-size: 1.2em !important;
+}
+
+body.rhythm-citadel-page .enemy-section {
+    background: transparent !important;
+    padding: 10px 0 !important;
+    border: none !important;
+}
+
+body.rhythm-citadel-page .service-info {
+    background: transparent !important;
+    border-left: none !important;
+    padding: 10px 0 !important;
+}
+
+/* GAME MECHANICS - RESPONSIVE */
+@media (max-width: 768px) {
+
+    body.rhythm-citadel-page #mechanics .clean-section-divider p,
+    body.rhythm-citadel-page #towers .clean-section-divider p {
+        font-size: 1em !important;
+    }
+
+    .callout {
+        margin-left: 0 !important;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .service-info {
+        text-align: center;
+        padding: 15px;
+        border-bottom: 2px solid #FFD700;
+        margin-bottom: 20px;
+    }
+
+    .service-info h2 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom-width: 2px;
+    }
+
+    .service-info p,
+    .service-info li {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .service-info ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+
+    .service-info {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .service-info h2 {
+        font-size: 1.4em;
+        padding-bottom: 8px;
+        border-bottom-width: 2px;
+    }
+
+    .service-info p,
+    .service-info li {
+        font-size: 1em;
+    }
+
+    .col-sm-12 {
+        margin-bottom: 15px;
+    }
+
+    .col-md-4.col-md-offset-1 {
+        width: 100%;
+        margin-left: 0;
+        float: none;
+    }
+}
+
 /* ==========================================================================
    PLAY SECTION (Rhythm Citadel)
    ========================================================================== */
@@ -789,7 +1649,6 @@ body.rhythm-citadel-page section.clean-section-divider#mechanics p.fade-up {
     background-color: rgba(0, 0, 0, 0.7);
     color: #FFD700;
 }
-
 
 .clean-section-divider {
     padding: 10px 0;
@@ -922,101 +1781,7 @@ body.loaded #footerwrap {
 }
 
 /* ==========================================================================
-   MEDIA QUERIES RESPONSIVE
-   ========================================================================== */
-
-@media (max-width: 768px) {
-    .progress-section {
-        padding: 50px 0;
-    }
-
-    .milestone-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .milestone {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .progress-bar {
-        font-size: 12px;
-    }
-
-    .section-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .section-image {
-        flex: 0 0 auto;
-        margin-bottom: 20px;
-    }
-
-    .enemy-content,
-    .tower-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .enemy-content.reverse,
-    .tower-content.reverse {
-        flex-direction: column;
-    }
-
-    .navbar-brand span {
-        font-size: 20px;
-    }
-
-    #headerwrap header h1,
-    #headerwrap2 header h1 {
-        font-size: 2.5em;
-    }
-
-    #headerwrap header p {
-        font-size: 1.2em;
-    }
-
-    .spinner {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 20px;
-    }
-
-    .preloader-content p {
-        font-size: 16px;
-    }
-
-    .progress-container {
-        width: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .spinner {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 15px;
-    }
-
-    .preloader-content p {
-        font-size: 14px;
-    }
-
-    .circle-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-
-    .engranaje-central {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-/* ==========================================================================
-   IMAGEN DE FONDO
+   IMAGEN DE FONDO RHYTHM CITADEL
    ========================================================================== */
 
 body.rhythm-citadel-page {
@@ -1060,737 +1825,49 @@ body.rhythm-citadel-page #headerwrap2 {
     margin-left: 120px;
 }
 
-body:not(.rhythm-citadel-page) h1,
-body:not(.rhythm-citadel-page) h2,
-body:not(.rhythm-citadel-page) h3,
-body:not(.rhythm-citadel-page) h4,
-body:not(.rhythm-citadel-page) h5,
-body:not(.rhythm-citadel-page) h6 {
-    color: #3498db !important;
-    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5) !important;
-}
-
 /* ==========================================================================
-   RESPONSIVE
+   MEDIA QUERIES GLOBALES
    ========================================================================== */
-
-.navbar-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.navbar-toggle {
-    margin-top: 20px;
-    margin-right: 15px;
-    border: 1px solid #000000;
-}
-
-.navbar-toggle .icon-bar {
-    background-color: #000000;
-    height: 3px;
-}
-
-.navbar-brand {
-    padding: 0;
-    height: auto;
-}
-
-.navbar-brand img {
-    height: 50px !important;
-    margin-right: 10px !important;
-}
-
-.navbar-brand span {
-    font-size: 22px !important;
-    line-height: 1.2;
-}   
-@media (max-width: 992px) {
-    .navbar-brand {
-        margin-top: 15px;
-    }
-    
-    .navbar-brand img {
-        height: 60px;
-        margin-right: 10px;
-    }
-    
-    .navbar-brand span {
-        font-size: 24px;
-    }
-    
-    .navbar-nav > li > a {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        font-size: 16px;
-    }
-}
-
-/* Para pantallas pequeñas (móviles) */
-@media (max-width: 767px) {
-    .navbar-brand {
-        float: none;
-        display: block;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .navbar-header {
-        display: block;
-        text-align: center;
-    }
-    
-    .navbar-brand img {
-        height: 50px;
-        margin-right: 10px;
-    }
-    
-    .navbar-brand span {
-        font-size: 22px;
-        display: inline-block;
-        vertical-align: middle;
-    }
-    
-    .navbar-toggle {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        display: block !important;
-    }
-    
-    .navbar-nav > li > a {
-        padding: 12px 15px !important;
-        font-size: 16px;
-    }
-}
-
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .navbar-brand {
-        text-align: left;
-        padding-left: 15px;
-    }
-    
-    .navbar-brand img {
-        height: 40px;
-        margin-right: 8px;
-    }
-    
-    .navbar-brand span {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .section-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .section-image {
-        margin: 0 auto 20px auto;
-        text-align: center;
-    }
-    
-    .section-text {
-        text-align: center;
-        width: 100%;
-    }
-    
-    .section-text p {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-    
-    .img-rhythm-citadel,
-    .img-game-development {
-        width: 200px;
-        height: auto;
-        max-width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .milestone-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    .milestone {
-        min-width: auto;
-        margin-bottom: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    .milestone-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .milestone {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 992px) {
-    .equipo-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .circle-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .engranaje-central {
-        width: 320px;
-        height: 320px;
-    }
-    
-    .member-container {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .member-container img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .info-panel {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .enemy-content,
-    .tower-content {
-        flex-direction: column !important;
-        text-align: center;
-    }
-    
-    .enemy-content.reverse,
-    .tower-content.reverse {
-        flex-direction: column !important;
-    }
-    
-    .enemy-image,
-    .tower-image {
-        margin-bottom: 20px;
-        order: 2;
-    }
-    
-    .enemy-text,
-    .tower-text {
-        order: 1;
-        text-align: center;
-    }
-    
-    .enemy-image img,
-    .tower-image img {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .callout {
-        margin-left: 0 !important;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-    
-    .service-info {
-        padding: 15px;
-        border-bottom: 2px solid #FFD700;
-        margin-bottom: 20px;
-    }
-    
-    .service-info h2 {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom-width: 2px;
-    }
-    
-    .service-info p,
-    .service-info li {
-        font-size: 1em;
-        line-height: 1.5;
-    }
-}
-
-.container {
-    overflow: hidden;
-}
-
-@media (max-width: 768px) {
-    #headerwrap2 {
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
-    
-    #headerwrap2 header h1 {
-        font-size: 2.5em;
-    }
-    
-    #headerwrap2 header p {
-        font-size: 1.2em;
-    }
-}
-
-.enemy-img, .tower-img {
-    max-width: 200px;
-    height: auto;
-    margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-    .enemy-img, .tower-img {
-        max-width: 150px;
-        margin-top: 15px;
-    }
-    
-    .media {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .media-left, .media-right {
-        float: none;
-        display: block;
-        margin: 15px auto;
-    }
-    
-    .media-body {
-        width: 100%;
-    }
-}
-
-.service-info h2 {
-    border-bottom: 3px solid #FFD700;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.service-info p, .service-info li {
-    font-size: 1.1em;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .service-info {
-        margin-bottom: 25px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #FFD700;
-    }
-    
-    .service-info h2 {
-        font-size: 1.3em;
-        padding-bottom: 6px;
-        border-bottom-width: 2px;
-    }
-}
-
-@media (max-width: 768px) {
-    .equipo-container {
-        padding: 0 15px;
-    }
-    
-    .circle-wrapper {
-        width: 220px;
-        height: 220px;
-        margin: 0 auto;
-    }
-    
-    .engranaje-central {
-        width: 280px;
-        height: 280px;
-    }
-    
-    .member-container {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .member-container img {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .info-panel {
-        width: 100%;
-        padding: 15px;
-    }
-}
-
-.section-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .section-image {
-        order: -1;
-    }
-    
-    .section-content {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-
-/* Enemy sections */
-.enemy-section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: rgba(26, 26, 26, 0.8);
-    border-radius: 10px;
-    border: 1px solid #FFD700;
-}
-
-.enemy-img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-}
-
-/* Media queries para dispositivos móviles */
-@media (max-width: 768px) {
-    .enemy-section {
-        padding: 15px;
-        margin-bottom: 30px;
-    }
-    
-    .media {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .media-body {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    
-    .media-right {
-        float: none;
-        display: block;
-        margin: 0 auto;
-    }
-    
-    .enemy-img {
-        width: 150px;
-        height: 150px;
-    }
-    
-    h4.media-heading {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-        color: #FFD700;
-    }
-    
-    .enemy-section p {
-        font-size: 1em;
-        line-height: 1.6;
-        margin-bottom: 10px;
-    }
-}
-
-/* Game Mechanics styles */
-.service-info {
-    padding: 20px;
-    margin-bottom: 25px;
-    background-color: rgba(26, 26, 26, 0.8);
-    border-radius: 10px;
-    border-left: 4px solid #FFD700;
-}
-
-.service-info h2 {
-    color: #FFD700;
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #FFD700;
-}
-
-.service-info ul {
-    padding-left: 20px;
-    margin-bottom: 15px;
-}
-
-.service-info li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-    color: white;
-}
-
-.service-info p {
-    color: white;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-@media (max-width: 768px) {
-    .service-info {
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-    
-    .service-info h2 {
-        font-size: 1.4em;
-        padding-bottom: 8px;
-        border-bottom-width: 2px;
-    }
-    
-    .service-info p,
-    .service-info li {
-        font-size: 1em;
-    }
-    
-    .col-sm-12 {
-        margin-bottom: 15px;
-    }
-}
-
-/* Container adjustments */
-.container {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 
 @media (max-width: 768px) {
     .container {
         padding-left: 10px;
         padding-right: 10px;
     }
-    
+
     .col-md-10.col-md-offset-1,
     .col-lg-10.col-lg-offset-1 {
         padding-left: 0;
         padding-right: 0;
     }
-}
 
-body.rhythm-citadel-page .service-info h2,
-body.rhythm-citadel-page .enemy-section h4 {
-    color: #FFD700 !important;
-}
-
-body.rhythm-citadel-page .service-info p,
-body.rhythm-citadel-page .service-info li,
-body.rhythm-citadel-page .enemy-section p {
-    color: white !important;
-}
-
-body.rhythm-citadel-page .service-info strong,
-body.rhythm-citadel-page .enemy-section strong {
-    color: #FFD700 !important;
-}
-
-/* ==========================================================================
-   ENEMIES RESPONSIVE STYLES
-   ========================================================================== */
-
-/* Escritorio: diseño intercalado */
-.enemy-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 40px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.enemy-content.reverse {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-}
-
-.enemy-image {
-    flex: 0 0 150px;
-    text-align: center;
-}
-
-.enemy-image img {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    object-fit: contain;
-}
-
-.enemy-text {
-    flex: 1;
-    text-align: left;
-}
-
-.enemy-text h4 {
-    color: #FFD700;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.8em;
-}
-
-.enemy-text p {
-    color: white;
-    font-size: 1.3em;
-    font-weight: 200;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.enemy-section {
-    margin-bottom: 50px;
-}
-
-/* Móvil: texto primero, imagen después */
-@media (max-width: 768px) {
-    .enemy-content,
-    .enemy-content.reverse {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
+    .spinner {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
     }
-    
-    .enemy-image {
-        order: 2; /* Imagen después del texto */
-        margin-top: 20px;
-    }
-    
-    .enemy-text {
-        order: 1; /* Texto primero */
-        text-align: center;
-    }
-    
-    .enemy-image img {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .enemy-text h4 {
-        font-size: 1.5em;
-        text-align: center;
-    }
-    
-    .enemy-text p {
-        font-size: 1.1em;
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-    }
-}
 
-@media (max-width: 768px) {
-    .callout {
-        margin-left: 0 !important;
-        margin-bottom: 30px;
-        width: 100%;
+    .preloader-content p {
+        font-size: 16px;
     }
-    
-    .service-info {
-        text-align: center;
-        padding: 15px;
-    }
-    
-    .service-info h2 {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #FFD700;
-    }
-    
-    .service-info p,
-    .service-info li {
-        font-size: 1em;
-        line-height: 1.5;
-    }
-    
-    .service-info ul {
-        padding-left: 0;
-        list-style-position: inside;
-    }
-    
-    /* Ajustar columnas */
-    .col-md-4.col-md-offset-1 {
-        width: 100%;
-        margin-left: 0;
-        float: none;
-    }
-}
 
-/* Para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .enemy-image img {
+    .progress-container {
         width: 150px;
-        height: 150px;
     }
-    
-    .service-info {
-        padding: 10px;
-    }
-    
-    .service-info h2 {
-        font-size: 1.3em;
+
+    .navbar-brand span {
+        font-size: 20px;
     }
 }
 
-body.rhythm-citadel-page .enemy-section {
-    background: transparent !important;
-    padding: 10px 0 !important;
-    border: none !important;
-}
+@media (max-width: 480px) {
+    .spinner {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+    }
 
-body.rhythm-citadel-page .service-info {
-    background: transparent !important;
-    border-left: none !important;
-    padding: 10px 0 !important;
-}
-
-/* Mantener colores del texto */
-body.rhythm-citadel-page .enemy-text h4 {
-    color: #FFD700 !important;
-}
-
-body.rhythm-citadel-page .enemy-text p,
-body.rhythm-citadel-page .service-info p,
-body.rhythm-citadel-page .service-info li {
-    color: white !important;
-}
-
-body.rhythm-citadel-page .service-info strong,
-body.rhythm-citadel-page .enemy-text strong {
-    color: #FFD700 !important;
-}
-
-body.rhythm-citadel-page #mechanics .clean-section-divider p,
-body.rhythm-citadel-page #towers .clean-section-divider p {
-    color: white !important;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
-    font-size: 1.2em !important;
-}
-
-/* Para móvil, reducir tamaño */
-@media (max-width: 768px) {
-    body.rhythm-citadel-page #mechanics .clean-section-divider p,
-    body.rhythm-citadel-page #towers .clean-section-divider p {
-        font-size: 1em !important;
+    .preloader-content p {
+        font-size: 14px;
     }
 }
