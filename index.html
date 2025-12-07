@@ -33,6 +33,7 @@
 		rel="stylesheet">
 
 	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -48,13 +49,20 @@
 	<nav class="navbar navbar-fixed-top" style="background: rgba(255, 255, 255, 0.95); padding: 12px 0;">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#home" style="display: flex; align-items: center; margin-top: 25px;">
-					<img src="images/logo.png" alt="Last Wave Studios Logo" style="height: 70px; margin-right: 15px;">
-					<span style="font-size: 30px; font-weight: bold; color: #3498db;">Last Wave Studios</span>
+				<a class="navbar-brand" href="#home">
+					<img src="images/logo.png" alt="Last Wave Studios Logo">
+					<span>Last Wave Studios</span>
 				</a>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#navbar-collapse-main" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 			</div>
-			<div class="navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
+			<div class="collapse navbar-collapse" id="navbar-collapse-main">
+				<ul class="nav navbar-nav">
 					<li><a href="#about">Projects</a></li>
 					<li><a href="#progress">Progress</a></li>
 					<li><a href="#team">Team</a></li>
@@ -76,7 +84,8 @@
 	</div>
 
 	<!-- HERO SECTION -->
-	<div id="headerwrap" name="home">
+	<div id="headerwrap2" name="home">
+		<img src="images/FondoPaginaWebLastWave.png" alt="Background" class="header-background">
 		<header class="clearfix">
 			<h1 class="animated bounceIn">Last Wave Studios</h1>
 			<p class="animated slideInLeft">Surfing the last wave of game innovation.</p>
