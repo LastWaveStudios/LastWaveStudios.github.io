@@ -32,6 +32,7 @@ h3,
 h4,
 h5,
 h6 {
+    text-align: center;
     font-family: 'Orbitron', sans-serif;
     color: #FFD700 !important;
     text-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
@@ -43,6 +44,7 @@ body:not(.rhythm-citadel-page) h3,
 body:not(.rhythm-citadel-page) h4,
 body:not(.rhythm-citadel-page) h5,
 body:not(.rhythm-citadel-page) h6 {
+    text-align: center;
     color: #3498db !important;
     text-shadow: 0 0 10px rgba(52, 152, 219, 0.5) !important;
 }
@@ -883,7 +885,6 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
 /* ==========================================================================
    CARRUSEL MIEMBROS (Página Principal)
    ========================================================================== */
-
 .equipo-container {
     display: flex;
     justify-content: center;
@@ -891,32 +892,46 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     gap: 50px;
     margin: 80px auto;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
+/* CONTENEDOR DEL CÍRCULO - tamaño base */
 .circle-wrapper {
     position: relative;
     width: 300px;
+    /* Tamaño base */
     height: 300px;
+    margin: 0 auto;
 }
 
+/* CÍRCULO PRINCIPAL */
 .circle {
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     transform: rotate(-300deg);
     transition: transform 1s ease-in-out;
     z-index: 2;
 }
 
+/* MIEMBROS - tamaño RELATIVO al círculo */
 .circle .member-container {
     z-index: 3;
     position: absolute;
     width: 80px;
+    /* Tamaño fijo pero se ajustará en responsive */
     height: 80px;
     top: 50%;
     left: 50%;
     margin-left: -40px;
+    /* Mitad del ancho */
     margin-top: -40px;
+    /* Mitad de la altura */
 }
 
 .circle .member-container img {
@@ -927,10 +942,10 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     transition: all 0.3s ease;
     object-fit: cover;
     display: block;
-    transform-origin: center;
-    z-index: 4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* POSICIONES - VERSIÓN CORREGIDA (sin transform extra) */
 .circle .member-container:nth-child(1) {
     transform: translate(140px, 0);
 }
@@ -956,10 +971,11 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
 }
 
 .circle .member-container img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
+/* ENGRANAJE - tamaño fijo pero proporcional */
 .engranaje-central {
     position: absolute;
     width: 375px;
@@ -976,23 +992,44 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
+/* PANEL DE INFORMACIÓN */
 .info-panel {
     max-width: 350px;
     min-height: 150px;
     text-align: left;
-    padding: 15px;
+    padding: 20px;
     background: #f5f5f5;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
 }
 
-/* CARRUSEL - RESPONSIVE */
-@media (max-width: 992px) {
+.info-panel h2 {
+    color: #3498db;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.info-panel p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Mediano (768px a 991px) */
+@media (max-width: 991px) {
     .equipo-container {
         flex-direction: column;
         gap: 40px;
+        margin: 60px auto;
     }
 
     .circle-wrapper {
@@ -1000,75 +1037,240 @@ body:not(.rhythm-citadel-page) #headerwrap2 header p.animated {
         height: 250px;
     }
 
+    .circle .member-container {
+        width: 65px;
+        height: 65px;
+        margin-left: -30px;
+        margin-top: -30px;
+    }
+
+    .circle .member-container:nth-child(1) {
+        transform: translate(116.67px, 0);
+    }
+
+    .circle .member-container:nth-child(2) {
+        transform: translate(58.33px, 100.83px);
+    }
+
+    .circle .member-container:nth-child(3) {
+        transform: translate(-58.33px, 100.83px);
+    }
+
+    .circle .member-container:nth-child(4) {
+        transform: translate(-116.67px, 0);
+    }
+
+    .circle .member-container:nth-child(5) {
+        transform: translate(-58.33px, -100.83px);
+    }
+
+    .circle .member-container:nth-child(6) {
+        transform: translate(58.33px, -100.83px);
+    }
+
     .engranaje-central {
-        width: 320px;
-        height: 320px;
-    }
-
-    .member-container {
-        width: 60px;
-        height: 60px;
-    }
-
-    .member-container img {
-        width: 60px;
-        height: 60px;
+        width: 312.5px;
+        height: 312.5px;
     }
 
     .info-panel {
+        max-width: 500px;
         width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
+        text-align: center;
+        min-width: auto;
+    }
+
+    .info-panel h2 {
+        font-size: 1.6em;
+    }
+
+    .info-panel p {
+        font-size: 1em;
     }
 }
 
-@media (max-width: 768px) {
+/* Pequeño (576px a 767px) */
+@media (max-width: 767px) {
     .equipo-container {
+        gap: 30px;
+        margin: 50px auto;
         padding: 0 15px;
     }
 
     .circle-wrapper {
         width: 220px;
         height: 220px;
-        margin: 0 auto;
+    }
+
+    .circle .member-container {
+        width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        margin-top: -25px;
+    }
+
+    .circle .member-container:nth-child(1) {
+        transform: translate(102.67px, 0);
+    }
+
+    .circle .member-container:nth-child(2) {
+        transform: translate(51.33px, 88.73px);
+    }
+
+    .circle .member-container:nth-child(3) {
+        transform: translate(-51.33px, 88.73px);
+    }
+
+    .circle .member-container:nth-child(4) {
+        transform: translate(-102.67px, 0);
+    }
+
+    .circle .member-container:nth-child(5) {
+        transform: translate(-51.33px, -88.73px);
+    }
+
+    .circle .member-container:nth-child(6) {
+        transform: translate(51.33px, -88.73px);
     }
 
     .engranaje-central {
-        width: 280px;
-        height: 280px;
+        width: 275px;
+        height: 275px;
     }
 
-    .member-container {
-        width: 50px;
-        height: 50px;
-    }
-
-    .member-container img {
-        width: 50px;
-        height: 50px;
+    .circle .member-container img {
+        border-width: 2px;
     }
 
     .info-panel {
-        width: 100%;
         padding: 15px;
+        max-width: 100%;
+    }
+
+    .info-panel h2 {
+        font-size: 1.4em;
     }
 }
 
-@media (max-width: 480px) {
+/* Más pequeño (480px a 575px) */
+@media (max-width: 575px) {
     .circle-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle .member-container {
+        width: 45px;
+        height: 45px;
+        margin-left: -22.5px;
+        margin-top: -22.5px;
+    }
+
+    .circle .member-container:nth-child(1) {
+        transform: translate(93.33px, 0);
+    }
+
+    .circle .member-container:nth-child(2) {
+        transform: translate(46.67px, 80.67px);
+    }
+
+    .circle .member-container:nth-child(3) {
+        transform: translate(-46.67px, 80.67px);
+    }
+
+    .circle .member-container:nth-child(4) {
+        transform: translate(-93.33px, 0);
+    }
+
+    .circle .member-container:nth-child(5) {
+        transform: translate(-46.67px, -80.67px);
+    }
+
+    .circle .member-container:nth-child(6) {
+        transform: translate(46.67px, -80.67px);
+    }
+
+    .engranaje-central {
         width: 250px;
         height: 250px;
     }
 
+    .circle .member-container img:hover {
+        transform: scale(1.1);
+    }
+
+    .equipo-container {
+        margin: 40px auto;
+        gap: 25px;
+    }
+}
+
+/* Muy pequeño (menos de 480px) */
+@media (max-width: 480px) {
+    .circle-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .circle .member-container {
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
+        margin-top: -20px;
+    }
+
+    .circle .member-container:nth-child(1) {
+        transform: translate(84px, 0);
+    }
+
+    .circle .member-container:nth-child(2) {
+        transform: translate(42px, 72.6px);
+    }
+
+    .circle .member-container:nth-child(3) {
+        transform: translate(-42px, 72.6px);
+    }
+
+    .circle .member-container:nth-child(4) {
+        transform: translate(-84px, 0);
+    }
+
+    .circle .member-container:nth-child(5) {
+        transform: translate(-42px, -72.6px);
+    }
+
+    .circle .member-container:nth-child(6) {
+        transform: translate(42px, -72.6px);
+    }
+
     .engranaje-central {
-        width: 300px;
-        height: 300px;
+        width: 225px;
+        height: 225px;
+    }
+
+    .info-panel {
+        padding: 12px;
+    }
+
+    .info-panel h2 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .info-panel p {
+        font-size: 0.95em;
     }
 }
 
 /* ==========================================================================
    STORY SECTION (Rhythm Citadel)
    ========================================================================== */
+
+body.rhythm-citadel-page #story h1 {
+    margin-top: 60px !important;
+    /* o el valor que prefieras */
+    margin-bottom: 40px !important;
+}
 
 .container .row.white {
     padding: 60px 0;
@@ -1208,6 +1410,9 @@ body.rhythm-citadel-page #story .row.white {
 .tower-section {
     display: flex;
     justify-content: center;
+    margin-bottom: 2px !important;
+    padding-bottom: 2px !important;
+    /* REDUCIDO de 50px */
 }
 
 .enemy-section:last-child,
@@ -1231,6 +1436,8 @@ body.rhythm-citadel-page #story .row.white {
 .tower-content.reverse {
     flex-direction: row-reverse;
     justify-content: flex-start;
+    margin-bottom: auto !important;
+    padding-bottom: auto !important;
 }
 
 .enemy-image,
@@ -1261,7 +1468,7 @@ body.rhythm-citadel-page #story .row.white {
 .tower-text p {
     margin-top: 0;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 1.3em;
     font-weight: 200;
 }
@@ -1284,10 +1491,6 @@ body.rhythm-citadel-page #towers+.container .row.white {
 body.rhythm-citadel-page section.clean-section-divider#towers p.fade-up {
     color: white !important;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
-}
-
-.enemy-section {
-    margin-bottom: 50px;
 }
 
 .enemy-text h4 {
@@ -1435,7 +1638,7 @@ body.rhythm-citadel-page section.clean-section-divider#towers p.fade-up {
    ========================================================================== */
 
 .clean-section-divider h1 {
-    margin-bottom: 20px;
+    margin-bottom: 0px !important;
     font-weight: 300;
     font-size: 2.5em;
 }
@@ -1445,6 +1648,7 @@ body.rhythm-citadel-page section.clean-section-divider#towers p.fade-up {
     opacity: 0.8;
     max-width: 600px;
     margin: 0 auto;
+    color: white;
 }
 
 .callout {
@@ -1651,7 +1855,7 @@ body.rhythm-citadel-page .service-info {
 }
 
 .clean-section-divider {
-    padding: 10px 0;
+    padding: 90px 0;
     text-align: center;
     background: transparent;
     position: relative;
